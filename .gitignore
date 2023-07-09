@@ -5,3 +5,5 @@
 *.JPG
 *.JPEG
 *.gif
+
+.vscode/
