@@ -15,6 +15,7 @@ def main():
     h_org, w_org, c = image.shape
     if os.path.isdir(OUTPUT_PATH):
         shutil.rmtree(OUTPUT_PATH)
+    cv2.imwrite(f"{OUTPUT_PATH}/{NUMBER_OF_FRAMES}.png", image)
     for i in tqdm(range(NUMBER_OF_FRAMES)):
         h, w, c = image.shape
         image = cv2.resize(
@@ -26,7 +27,7 @@ def main():
         image_org_size = cv2.resize(image, (w_org, h_org), interpolation=cv2.INTER_NEAREST)
         os.makedirs(OUTPUT_PATH, exist_ok=True)
         cv2.imwrite(f"{OUTPUT_PATH}/{NUMBER_OF_FRAMES - 1 - i}.png", image_org_size)
-        #cv2.imwrite(f"{OUTPUT_PATH}/{NUMBER_OF_FRAMES + i}.png", image_org_size)
+        #cv2.imwrite(f"{OUTPUT_PATH}/{NUMBER_OF_FRAMES + 1 + i}.png", image_org_size)
 
 
 main()
