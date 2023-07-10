@@ -46,14 +46,14 @@ def main():
                 int(w/RESIZE_FACTOR),
                 int(h/RESIZE_FACTOR)
             ), interpolation=cv2.INTER_CUBIC)
-        image = addNoise(image, 0, 0.05, True)
+        image = addNoise(image, 0, 0.02, True)
         image_org_size = cv2.resize(image, (w_org, h_org), interpolation=cv2.INTER_NEAREST)
         cv2.imwrite(f"{OUTPUT_PATH}/{NUMBER_OF_FRAMES - 1 - i}.png", image_org_size)
 
     # Add noise, keep the same resolution
     number_of_noisy_frames = NUMBER_OF_FRAMES // 5
     for i in tqdm(range(number_of_noisy_frames)):
-        image = addNoise(image, 0, 0.1, True)
+        image = addNoise(image, 0, 0.02 + 0.005*i, True)
         image_org_size = cv2.resize(image, (w_org, h_org), interpolation=cv2.INTER_NEAREST)
         cv2.imwrite(f"{OUTPUT_PATH}/0_{number_of_noisy_frames - 1 - i}.png", image_org_size)
 
