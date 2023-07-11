@@ -129,15 +129,17 @@
       <h2 class="display-5">Packet delivery optimization</h2>
       <p class="lead" style="text-align: justify;">
         Challenged myself on learning how complex vehicle routing really is.
-        The underlying problem tries to minimize the traveling distance by taking into account constraints and changing environment.
-        To understand bit of the complexity:
+        The underlying problem is to minimize the traveling distance by taking into account constraints and changing environment.
+        The simplest form of minimizing the distance without any constraints is called Traveling Salesperson Problem (TSP).
+        Here are some numbers to understand the complexity of TSP:
       </p>
       <ul class="lead" style="text-align: left;">
         <li>With 4 locations there are 6 possible routes</li>
-        <li>With 11 locations there are 362880 possible routes</li>
-        <li>With 21 locations there are 2432902008176640000 possible routes</li>
+        <li>With 11 locations there are 362,880 possible routes</li>
+        <li>With 21 locations there are 2,432,902,008,176,640,000 possible routes</li>
       </ul>
       <p class="lead" style="text-align: justify;">
+        Adding constraints to the routing problem further complicates the optimization.
         Constraints of the problem include, for example, vehicle capacity, vehicle refill points, or product type specifications.
         I coded a solution taking into account the following constraints:
       </p>
