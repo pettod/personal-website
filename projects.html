@@ -55,7 +55,7 @@
       }
 
       div.background {
-        background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('assets/alps.jpg');
+        background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('assets/alps.jpg');
         background-size: cover;
       }
     </style>
@@ -94,7 +94,7 @@
   <div class="background position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
     <div class="col-md-6 p-lg-5 mx-auto my-5">
       <h1 class="display-3 fw-bold">Projects</h1>
-      <h3 class="fw-normal text-muted mb-3">The ones with more or less hype</h3>
+      <h3 class="fw-normal text-muted mb-3">The ones hyped more or less</h3>
     </div>
   </div>
 
@@ -111,7 +111,7 @@
         </p>
         <ul class="lead" style="text-align: left;">
           <li>Fast understanding of the state of multiple GPU servers</li>
-          <li>Single view of up to 6 servers</li>
+          <li>Single view of unlimited number of servers</li>
           <li>Real-time monitoring web dashboard</li>
           <li>User specific statistics</li>
           <li>User sorted GPU programs and their execution times</li>
@@ -124,10 +124,32 @@
       </div>
     </div>
 
-  <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+  <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="background-color: rgb(243, 243, 243);">
     <div class="my-3 py-3">
-      <h2 class="display-5">Another headline</h2>
-      <p class="lead">And an even wittier subheading.</p>
+      <h2 class="display-5">Packet delivery optimization</h2>
+      <p class="lead" style="text-align: justify;">
+        Challenged myself on learning how complex vehicle routing really is.
+        The underlying problem tries to minimize the traveling distance by taking into account constraints and changing environment.
+        To understand bit of the complexity:
+      </p>
+      <ul class="lead" style="text-align: left;">
+        <li>With 4 locations there are 6 possible routes</li>
+        <li>With 11 locations there are 362880 possible routes</li>
+        <li>With 21 locations there are 2432902008176640000 possible routes</li>
+      </ul>
+      <p class="lead" style="text-align: justify;">
+        Constraints of the problem include, for example, vehicle capacity, vehicle refill points, or product type specifications.
+        I coded a solution taking into account the following constraints:
+      </p>
+      <ul class="lead" style="text-align: left;">
+        <li>Minimize traveling distance</li>
+        <li>N number of vehicles</li>
+        <li>M number of packages</li>
+        <li>Delivery deadlines of the packages</li>
+        <li>Driver's working hours</li>
+        <li>Driver's maximum single delivery distance</li>
+        <li>Driver's mandatory lunch break</li>
+      </ul>
     </div>
   </div>
 
