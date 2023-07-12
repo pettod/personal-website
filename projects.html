@@ -55,7 +55,7 @@
       }
 
       div.background {
-        background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('assets/alps.jpg');
+        background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('assets/alps_small.jpg');
         background-size: cover;
       }
     </style>
@@ -95,7 +95,7 @@
   <div class="background position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
     <div class="col-md-6 p-lg-5 mx-auto my-5">
       <h1 class="display-3 fw-bold">Projects</h1>
-      <h3 class="fw-normal text-muted mb-3">Where all the hype comes from</h3>
+      <h3 class="fw-normal text-muted mb-3">Where the hype lays</h3>
     </div>
   </div>
 
@@ -164,17 +164,19 @@
     <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="background-color: rgb(245, 245, 245);">
       <div class="my-3 p-3">
         <h2 class="display-5">Motion prediction for autonomous vehicles</h2>
+        <img width="560" src="https://github.com/pettod/personal-website/assets/33998401/f8f680bb-cfab-47a0-acf7-5eff54f588fa">
         <p class="lead" style="text-align: justify;">
           Deep learning model for an autonomous vehicle to predict the movement of traffic agents such as cars, cyclists, and pedestrians.
           The target was to predict future trajectory from a given vector of (x,y) coordinates of the past trajectory.
           <br><br>
-          By converting the coordinates to a sequence of bird eye view frames, I changed the approach of vector data to image to image problem resulting higher accuracy.
+          By converting the coordinates to a bird eye view image, I changed the approach of dealing with vector data to image to image problem resulting in higher accuracy.
         </p>
       </div>
     </div>
     <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="background-color: rgb(245, 245, 245);">
       <div class="my-3 py-3">
         <h2 class="display-5">Deepfake detection</h2>
+        <img width="560" src="https://github.com/pettod/deepfake-recognition-kaggle/assets/33998401/3cdde308-0523-4e72-a3e6-fae2542d70cd">
         <p class="lead" style="text-align: justify;">
           Deepfake techniques, which present realistic AI-generated videos of people doing and saying fictional things, have the potential to have a significant impact on how people determine the legitimacy of information presented online.
           These content generation and modification technologies may affect the quality of public discourse and the safeguarding of human rights — especially given that deepfakes may be used maliciously as a source of misinformation, manipulation, harassment, and persuasion.
@@ -191,7 +193,7 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 p-3">
         <h2 class="display-5">Prostate cancer grade assessment</h2>
-        <img width="560" src="assets/medical_segmentation.png">
+        <img width="560" src="https://github.com/pettod/medical-segmentation/assets/33998401/9a4982c5-d5bd-42f7-8e9f-5d9d1eb9f64b">
         <p class="lead" style="text-align: justify;">
           With more than 1 million new diagnoses reported every year, prostate cancer (PCa) is the second most common cancer among males worldwide that results in more than 350,000 deaths annually.
           The key to decreasing mortality is developing more precise diagnostics.
@@ -207,12 +209,12 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-5">Molecular translation</h2>
-        <img width="560" src="https://user-images.githubusercontent.com/33998401/112753716-78adc600-8fe1-11eb-95e1-b1eb764caf6e.png">
+        <img width="560" src="https://github.com/pettod/bms-molecular-translation/assets/33998401/7d1d3d97-3660-4169-ae1d-75bbb0c1a828">
         <p class="lead" style="text-align: justify;">
           Sometimes the best and easiest tools are still pen and paper.
-          Organic chemists frequently draw out molecular work with the Skeletal formula, a structural notation used for centuries.
-          Recent publications are also annotated with machine-readable chemical descriptions (InChI), but there are decades of scanned documents that can't be automatically searched for specific chemical depictions.
-          Automated recognition of optical chemical structures, with the help of machine learning, could speed up research and development efforts.
+          Organic chemists frequently draw out molecular work with the <a href="https://en.wikipedia.org/wiki/Skeletal_formula">Skeletal formula</a>, a structural notation used for centuries.
+          Recent publications are also annotated with machine-readable chemical descriptions (<a href="https://en.wikipedia.org/wiki/International_Chemical_Identifier">InChI</a>), but there are decades of scanned documents that can't be automatically searched for specific chemical depictions.
+          To speed up research and development efforts, an automated recognition of optical chemical structures will be helpful.
           <br><br>
           I created a deep learning model to translate chemical images to InChI text.
         </p>
@@ -248,10 +250,11 @@
           Overview of the tech:
         </p>
         <ul class="lead" style="text-align: left;">
+          <li>Relay card control through the GPIO pins of Raspberry Pi</li>
           <li>MongoDB for user registration and session management</li>
           <li>Routing between client, proxy server, backend server, and a terminal device</li>
           <li>The terminal device controls a relay card that turns the devices either on or off</li>
-          <li>Used Node.js, Flask, HTML/JS/CSS, Python and MongoDB</li>
+          <li>Used Node.js, Flask, HTML, JS, CSS, Python, and MongoDB</li>
         </ul>
       </div>
     </div>
