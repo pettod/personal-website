@@ -182,8 +182,15 @@
           These content generation and modification technologies may affect the quality of public discourse and the safeguarding of human rights — especially given that deepfakes may be used maliciously as a source of misinformation, manipulation, harassment, and persuasion.
           <br><br>
           I created a deep learning model to identify videos with facial or voice manipulations.
-          Detected faces from .mp4 videos, clustered different humans in a video, removed outliers that were not real humans, and used multiple faces from different video frames to finally classify the video.
+          Following steps were done from input to output:
         </p>
+        <ol  class="lead" style="text-align: left;">
+          <li>Decoded .mp4 video into frames</li>
+          <li>Detected faces from multiple frames</li>
+          <li>Clustered different humans in a video</li>
+          <li>Removed outliers that were not real humans</li>
+          <li>Classified the video by using multiple faces from different video frames</li>
+        </ol>
       </div>
     </div>
   </div>
