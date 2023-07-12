@@ -113,7 +113,7 @@
         </p>
         <ul class="lead" style="text-align: left;">
           <li>Fast understanding of the state of multiple GPU servers</li>
-          <li>Single view of unlimited number of servers</li>
+          <li>State of unlimited number of servers on a single view</li>
           <li>Real-time monitoring web dashboard</li>
           <li>User specific statistics</li>
           <li>User sorted GPU programs and their execution times</li>
@@ -129,7 +129,7 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-5">Package delivery optimization</h2>
-        <img width="560" src="https://github.com/pettod/delivery-routing/assets/33998401/60a148f3-8172-4861-82a9-6a31ae8ff400">
+        <img width="560" src="https://github.com/pettod/delivery-routing/assets/33998401/8bda2271-aa07-48fe-8a4d-fd0f64ebcc97">
         <p class="lead" style="text-align: justify;">
           Challenged myself on learning how complex vehicle routing really is.
           The underlying problem is to minimize the traveling distance by taking into account constraints and changing environment.
@@ -166,8 +166,9 @@
         <h2 class="display-5">Motion prediction for autonomous vehicles</h2>
         <p class="lead" style="text-align: justify;">
           Deep learning model for an autonomous vehicle to predict the movement of traffic agents such as cars, cyclists, and pedestrians.
-          The target was to predict future trajectory from the given a vector of (x,y) coordinates of the past trajectory.
-          In our approach, we built a bird eye view image of the trajectories and changed the approach to image to image problem.
+          The target was to predict future trajectory from a given vector of (x,y) coordinates of the past trajectory.
+          <br><br>
+          By converting the coordinates to a sequence of bird eye view frames, I changed the approach of vector data to image to image problem resulting higher accuracy.
         </p>
       </div>
     </div>
@@ -175,8 +176,11 @@
       <div class="my-3 py-3">
         <h2 class="display-5">Deepfake detection</h2>
         <p class="lead" style="text-align: justify;">
-          Deep learning model to identify videos with facial or voice manipulations.
-          Detecting faces from .mp4 videos, clustering different humans in a video, removing outliers that are not real humans and using multiple faces from different video frames to classify the video.
+          Deepfake techniques, which present realistic AI-generated videos of people doing and saying fictional things, have the potential to have a significant impact on how people determine the legitimacy of information presented online.
+          These content generation and modification technologies may affect the quality of public discourse and the safeguarding of human rights — especially given that deepfakes may be used maliciously as a source of misinformation, manipulation, harassment, and persuasion.
+          <br><br>
+          I created a deep learning model to identify videos with facial or voice manipulations.
+          Detected faces from .mp4 videos, clustered different humans in a video, removed outliers that were not real humans, and used multiple faces from different video frames to finally classify the video.
         </p>
       </div>
     </div>
@@ -189,10 +193,14 @@
         <h2 class="display-5">Prostate cancer grade assessment</h2>
         <img width="560" src="assets/medical_segmentation.png">
         <p class="lead" style="text-align: justify;">
-          Deep learning model for diagnosing prostate cancer from high-resolution images (~800 Mpx per image, maximum size >4000Mpx).
+          With more than 1 million new diagnoses reported every year, prostate cancer (PCa) is the second most common cancer among males worldwide that results in more than 350,000 deaths annually.
+          The key to decreasing mortality is developing more precise diagnostics.
+          <br><br>
+          I created a deep learning model for diagnosing PCa from high-resolution images (average of 800 Mpx per image, maximum size >4000 Mpx).
+          <br><br>
           Achieved validation kappa score 0.91 (6 ISUP grades in the Gleason grading system).
-          Segmenting cell with normal, healthy, stroma and Gleason scores from 3 to 5.
-          Classifying by using as large tissue area as possible.
+          Segmented cell with normal, healthy, stroma and Gleason scores from 3 to 5.
+          Classified by using as large tissue area as possible.
         </p>
       </div>
     </div>
@@ -201,7 +209,12 @@
         <h2 class="display-5">Molecular translation</h2>
         <img width="560" src="https://user-images.githubusercontent.com/33998401/112753716-78adc600-8fe1-11eb-95e1-b1eb764caf6e.png">
         <p class="lead" style="text-align: justify;">
-          Deep learning model to translate chemical images to InChI text.
+          Sometimes the best and easiest tools are still pen and paper.
+          Organic chemists frequently draw out molecular work with the Skeletal formula, a structural notation used for centuries.
+          Recent publications are also annotated with machine-readable chemical descriptions (InChI), but there are decades of scanned documents that can't be automatically searched for specific chemical depictions.
+          Automated recognition of optical chemical structures, with the help of machine learning, could speed up research and development efforts.
+          <br><br>
+          I created a deep learning model to translate chemical images to InChI text.
         </p>
       </div>
     </div>
@@ -215,6 +228,9 @@
         <img width="560" src="https://github.com/pettod/charuco-corner-detection/raw/master/document_images/detected_charuco_markers.gif">
         <p class="lead" style="text-align: justify;">
           Tool for camera calibration to detect checkerboard corners with corner identifications.
+          It is especially helpful for multi-camera calibration where all the cameras cannot see the whole checkerboard.
+          By knowing the corner identifications, one can use images with partly visible checkerboards for camera calibration.
+          <br><br>
           Used Python OpenCV and embedded it into Matlab as well.
         </p>
       </div>
@@ -224,12 +240,19 @@
         <h2 class="display-5">Remote device control - web platform</h2>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/drcwjqq63-M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <p class="lead" style="text-align: justify;">
-          Turning electric devices on/off remotely (home automation).
-          Google account authentication, user registration and session management with MongoDB.
-          Routing between client, proxy server, backend server, and a terminal device.
-          The terminal device controls a relay card that turns the devices either on or off.
-          Used Node.js, Flask, HTML/JS/CSS, Python and MongoDB.
+          Turning electric devices (up to 2kW) on/off remotely, also known as home automation.
+          Being able to control your electric devices remotely might help you save time of not transporting to your home, cottage or office.
+          <br><br>
+          I created a scalable platform where users can login with Google account authentication and access multiple locations which to control remotely.
+          <br><br>
+          Overview of the tech:
         </p>
+        <ul class="lead" style="text-align: left;">
+          <li>MongoDB for user registration and session management</li>
+          <li>Routing between client, proxy server, backend server, and a terminal device</li>
+          <li>The terminal device controls a relay card that turns the devices either on or off</li>
+          <li>Used Node.js, Flask, HTML/JS/CSS, Python and MongoDB</li>
+        </ul>
       </div>
     </div>
   </div>
