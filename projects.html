@@ -164,7 +164,7 @@
     <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="background-color: rgb(245, 245, 245);">
       <div class="my-3 p-3">
         <h2 class="display-5">Motion prediction for autonomous vehicles</h2>
-        <img width="560" src="https://github.com/pettod/personal-website/assets/33998401/f8f680bb-cfab-47a0-acf7-5eff54f588fa">
+        <img width="560" src="https://github.com/pettod/personal-website/assets/33998401/d2cbc66a-544d-48ff-9a47-cd885208982e">
         <p class="lead" style="text-align: justify;">
           Deep learning model for an autonomous vehicle to predict the movement of traffic agents such as cars, cyclists, and pedestrians.
           The target was to predict future trajectory from a given vector of (x,y) coordinates of the past trajectory.
@@ -182,15 +182,27 @@
           These content generation and modification technologies may affect the quality of public discourse and the safeguarding of human rights — especially given that deepfakes may be used maliciously as a source of misinformation, manipulation, harassment, and persuasion.
           <br><br>
           I created a deep learning model to identify videos with facial or voice manipulations.
-          Following steps were done from input to output:
+          The pipeline from input to output was as follows:
         </p>
-        <ol  class="lead" style="text-align: left;">
-          <li>Decoded .mp4 video into frames</li>
-          <li>Detected faces from multiple frames</li>
-          <li>Clustered different humans in a video</li>
-          <li>Removed outliers that were not real humans</li>
-          <li>Classified the video by using multiple faces from different video frames</li>
+        <ol class="lead" style="text-align: left;">
+          <li>Decode .mp4 video into frames</li>
+          <li>Detect faces from multiple frames</li>
+          <li>Cluster different humans in a video</li>
+          <li>Remove outliers that were not real humans</li>
+          <li>Classify the video by using multiple faces from different video frames</li>
         </ol>
+        <p class="lead" style="text-align: justify;">
+          The challenge lied in how multi-step the classification had to be.
+          Before being able to classify the video, had to create a face detection algorithm.
+          And that itself is already a project on it's own.
+          There was also time limit so the face detection had to be fast but also accurate and not every model was able to meet this requirement.
+          Also, in some of the videos there were multiple people present.
+          Obviously, you cannot mess the different faces because that would easily lead to a fake prediction.
+          So clustering was needed.
+          Then sometimes the face detection picked face looking areas such as a pillow with eyes and a mouth or a face picture on a wall.
+          These also had to be filtered out to avoid misleading the classification model.
+          Finally, it was time for the classification model research in which, in the end, I concatenated 9 faces to an input image and fed it to the model.
+        </p>
       </div>
     </div>
   </div>
@@ -200,7 +212,7 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 p-3">
         <h2 class="display-5">Prostate cancer grade assessment</h2>
-        <img width="560" src="https://github.com/pettod/medical-segmentation/assets/33998401/9a4982c5-d5bd-42f7-8e9f-5d9d1eb9f64b">
+        <img width="560" src="https://github.com/pettod/personal-website/assets/33998401/ac116f86-61a6-4a3a-934e-5fd22da48c1a">
         <p class="lead" style="text-align: justify;">
           With more than 1 million new diagnoses reported every year, prostate cancer (PCa) is the second most common cancer among males worldwide that results in more than 350,000 deaths annually.
           The key to decreasing mortality is developing more precise diagnostics.
