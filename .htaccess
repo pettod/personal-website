@@ -1,0 +1,13 @@
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^todorov\.fi$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.todorov\.fi$
+RewriteRule ^/?$ "https\:\/\/todorov\.fi\/" [R=301,L]
+
+# Remove html file extension
+# from https://example.com/page.html
+# to   https://example.com/page
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC, L]
