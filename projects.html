@@ -95,7 +95,6 @@
   <div class="background position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
     <div class="col-md-6 p-lg-5 mx-auto my-5">
       <h1 class="display-3 fw-bold">Projects</h1>
-      <h3 class="fw-normal text-muted mb-3">Where the hype lays</h3>
     </div>
   </div>
 
@@ -112,8 +111,11 @@
           What does this visualization tool then provide:
         </p>
         <ul class="lead" style="text-align: left;">
-          <li>Fast understanding of the state of multiple GPU servers</li>
-          <li>State of unlimited number of servers on a single view</li>
+          <li>Fast understanding of the state of multiple GPU servers
+            <ul>
+              <li>View of unlimited number of servers on a single page</li>
+            </ul>
+          </li>
           <li>Real-time monitoring web dashboard</li>
           <li>User specific statistics</li>
           <li>User sorted GPU programs and their execution times</li>
@@ -169,14 +171,17 @@
           Deep learning model for an autonomous vehicle to predict the movement of traffic agents such as cars, cyclists, and pedestrians.
           The target was to predict future trajectory from a given vector of (x,y) coordinates of the past trajectory.
           <br><br>
-          By converting the coordinates to a bird eye view image, I changed the approach of dealing with vector data to image to image problem resulting in higher accuracy.
+          By converting the coordinates to a bird eye view image, the approach of dealing with vector data was changed to image to image problem resulting in higher accuracy.
+        </p>
+        <p class="lead" style="text-align: left; font-size: small;">
+          *Image simulated from the public dataset: <a href="https://arxiv.org/abs/2006.14480">https://arxiv.org/abs/2006.14480</a>
         </p>
       </div>
     </div>
     <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="background-color: rgb(245, 245, 245);">
       <div class="my-3 py-3">
         <h2 class="display-5">Deepfake detection</h2>
-        <img width="560" src="https://github.com/pettod/personal-website/assets/33998401/8855a0c4-f987-42c6-b465-d470fb352ef5">
+        <img width="560" src="https://github.com/pettod/deepfake-recognition-kaggle/assets/33998401/f15c348e-7b6c-40af-8f16-48699016f3cd">
         <p class="lead" style="text-align: justify;">
           Deepfake techniques, which present realistic AI-generated videos of people doing and saying fictional things, have the potential to have a significant impact on how people determine the legitimacy of information presented online.
           These content generation and modification technologies may affect the quality of public discourse and the safeguarding of human rights — especially given that deepfakes may be used maliciously as a source of misinformation, manipulation, harassment, and persuasion.
@@ -188,7 +193,7 @@
           <li>Decode .mp4 video into frames</li>
           <li>Detect faces from multiple frames</li>
           <li>Cluster different humans in a video</li>
-          <li>Remove outliers that were not real humans</li>
+          <li>Remove outliers that are not real humans</li>
           <li>Classify the video by using multiple faces from different video frames</li>
         </ol>
         <p class="lead" style="text-align: justify;">
@@ -202,6 +207,9 @@
           Then sometimes the face detection picked face looking areas such as a pillow with eyes and a mouth or a face picture on a wall.
           These also had to be filtered out to avoid misleading the classification model.
           Finally, it was time for the classification model research in which, in the end, I concatenated 9 faces to an input image and fed it to the model.
+        </p>
+        <p class="lead" style="text-align: left; font-size: small;">
+          *Video detection from the public dataset: <a href="https://arxiv.org/abs/2006.07397">https://arxiv.org/abs/2006.07397</a>
         </p>
       </div>
     </div>
@@ -223,6 +231,9 @@
           Segmented cell with normal, healthy, stroma and Gleason scores from 3 to 5.
           Classified by using as large tissue area as possible.
         </p>
+        <p class="lead" style="text-align: left; font-size: small;">
+          *Image segmentation from the public dataset: <a href="https://www.nature.com/articles/s41591-021-01620-2">https://www.nature.com/articles/s41591-021-01620-2</a>
+        </p>
       </div>
     </div>
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
@@ -236,6 +247,9 @@
           To speed up research and development efforts, an automated recognition of optical chemical structures will be helpful.
           <br><br>
           I created a deep learning model to translate chemical images to InChI text.
+        </p>
+        <p class="lead" style="text-align: left; font-size: small;">
+          *Image sample from the public dataset: <a href="https://www.kaggle.com/competitions/bms-molecular-translation/data">https://www.kaggle.com/competitions/bms-molecular-translation/data</a>
         </p>
       </div>
     </div>
