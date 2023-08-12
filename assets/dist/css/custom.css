@@ -66,6 +66,14 @@
   margin: auto;
 }
 
+.vertical-center {
+  height: calc(100% - 56px);  /* Navbar is 56px high */
+  height: -o-calc(100% - 56px); /* opera */
+  height: -webkit-calc(100% - 56px); /* google, safari */
+  height: -moz-calc(100% - 56px); /* firefox */
+  align-items: center;
+}
+
 /*
   * Extra utilities
   */
