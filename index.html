@@ -18,9 +18,19 @@
         user-select: none;
       }
 
-      @media (min-width: 768px) {
+      .container-intro {
+        display: flex;
+      }
+
+      @media (max-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
+        }
+        .container-intro {
+          flex-direction: column;
+        }
+        .right {
+          order: -1;
         }
       }
 
@@ -86,7 +96,7 @@
 
 <main style="height: 80%; align-items: center;">
   <!-- First section -->
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3" style="height: 100%; align-items: center; width: 100%;">
+  <div class="container-intro d-md-flex flex-md-equal w-100 my-md-3 ps-md-3" style="height: 100%; align-items: center; width: 100%;">
     <div class="col">
       <div style="text-align: left; padding: 5%;">
         <h1 class="display-3 fw-normal">Peter Todorov</h1>
@@ -108,7 +118,7 @@
         </div>
       </div>
     </div>
-    <div class="col" style="text-align: center; padding: 5%;">
+    <div class="col right" style="text-align: center; padding: 5%;">
       <img src="assets/peter_todorov_profile_540.png" style="border-radius: 15%; width: 100%; max-width: 540px; height: auto;">
     </div>
   </div>
