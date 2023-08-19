@@ -34,12 +34,22 @@
       }
 
       .bd-text {
-        letter-spacing: 0px;
+        font-size: 18px;
         line-height: 27px;
         font-weight: 350;
         margin-bottom: 24px;
+        letter-spacing: 0px;
         font-family: sans-serif;
-        font-size: 18px;
+        text-align: left;
+      }
+
+      .img-text {
+        font-size: 15px;
+        line-height: 21px;
+        font-weight: 250;
+        margin-bottom: 24px;
+        letter-spacing: 0px;
+        font-family: sans-serif;
         text-align: left;
       }
 
@@ -48,6 +58,12 @@
           font-size: 16px;
           line-height: 24px;
           margin-bottom: 16px;
+        }
+
+        .img-text {
+          font-size: 13px;
+          line-height: 18px;
+          margin-bottom: 11px;
         }
       }
     </style>
@@ -91,66 +107,78 @@
       <div class="my-3 py-3">
         <h2 class="display-5">Deepfake detection</h2>
         <img width="100%" src="https://github.com/pettod/deepfake-recognition-kaggle/assets/33998401/f15c348e-7b6c-40af-8f16-48699016f3cd" style="padding-bottom: 15px;">
-        <p class="bd-text">
-          Deepfake techniques, which present realistic AI-generated videos of people doing and saying fictional things, have the potential to have a significant impact on how people determine the legitimacy of information presented online.
-          These content generation and modification technologies may affect the quality of public discourse and the safeguarding of human rights — especially given that deepfakes may be used maliciously as a source of misinformation, manipulation, harassment, and persuasion.
+        <p class="img-text">
+          Real-time deepfake face detection and classification. See a moving "face ghost" between the persons.*
         </p>
-        <p class="bd-text" style="margin-bottom: 0px;">
-          I created a deep learning model to identify videos with facial or voice manipulations.
-          The pipeline from input to output was as follows:
-        </p>
-        <ol class="bd-text" style="text-align: left;">
-          <li>Decode .mp4 video into frames</li>
-          <li>Detect faces from multiple frames</li>
-          <li>Cluster different humans in a video</li>
-          <li>Remove outliers that are not real humans</li>
-          <li>Classify the video by using multiple faces from different video frames</li>
-        </ol>
-        <p class="bd-text">
-          The challenge lied in how multi-step the classification had to be.
-          Before being able to classify the video, had to create a face detection algorithm.
-          There was a time limit so the face detection had to be fast but also accurate and not every model was able to meet these requirements.
-          Also, in some of the videos there were multiple people present.
-          Obviously, you cannot mess the different faces because that would easily lead to a fake prediction.
-          So clustering was needed.
-          Then sometimes the face detection picked face looking areas such as a pillow with eyes and a mouth or a face picture on a wall.
-          These also had to be filtered out to avoid misleading the classification model.
-          Finally, it was time for the classification model research in which, in the end, I concatenated 9 faces to an input image and fed it to the model.
-        </p>
-        <p class="bd-text" style="text-align: left; font-size: small; line-height: 21px;">
-          *Video detection from the public dataset: <a href="https://arxiv.org/abs/2006.07397">https://arxiv.org/abs/2006.07397</a>
-        </p>
+        <div class="collapse" id="collapse-1">
+          <p class="bd-text">
+            Deepfake techniques, which present realistic AI-generated videos of people doing and saying fictional things, have the potential to have a significant impact on how people determine the legitimacy of information presented online.
+            These content generation and modification technologies may affect the quality of public discourse and the safeguarding of human rights — especially given that deepfakes may be used maliciously as a source of misinformation, manipulation, harassment, and persuasion.
+          </p>
+          <p class="bd-text" style="margin-bottom: 0px;">
+            I created a deep learning model to identify videos with facial or voice manipulations.
+            The pipeline from input to output was as follows:
+          </p>
+          <ol class="bd-text" style="text-align: left;">
+            <li>Decode .mp4 video into frames</li>
+            <li>Detect faces from multiple frames</li>
+            <li>Cluster different humans in a video</li>
+            <li>Remove outliers that are not real humans</li>
+            <li>Classify the video by using multiple faces from different video frames</li>
+          </ol>
+          <p class="bd-text">
+            The challenge lied in how multi-step the classification had to be.
+            Before being able to classify the video, had to create a face detection algorithm.
+            There was a time limit so the face detection had to be fast but also accurate and not every model was able to meet these requirements.
+            Also, in some of the videos there were multiple people present.
+            Obviously, you cannot mess the different faces because that would easily lead to a fake prediction.
+            So clustering was needed.
+            Then sometimes the face detection picked face looking areas such as a pillow with eyes and a mouth or a face picture on a wall.
+            These also had to be filtered out to avoid misleading the classification model.
+            Finally, it was time for the classification model research in which, in the end, I concatenated 9 faces to an input image and fed it to the model.
+          </p>
+          <p class="bd-text" style="text-align: left; font-size: small; line-height: 21px;">
+            *Video detection from the public dataset: <a href="https://arxiv.org/abs/2006.07397">https://arxiv.org/abs/2006.07397</a>
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-1" class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">Read more &darr;</button></p>
       </div>
     </div>
     <div class="text-bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-5">Package delivery optimization</h2>
         <img width="100%" src="https://github.com/pettod/delivery-routing/assets/33998401/8bda2271-aa07-48fe-8a4d-fd0f64ebcc97" style="padding-bottom: 15px;">
-        <p class="bd-text" style="margin-bottom: 0px;">
-          Challenged myself on learning how complex vehicle routing really is.
-          The underlying problem is to minimize the traveling distance by taking into account constraints and changing environment.
-          The simplest form of minimizing the distance without any constraints is called <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem">Traveling Salesperson Problem</a> (TSP).
-          Here are some numbers to understand the complexity of TSP:
+        <p class="img-text">
+          Finding optimized route with 301 locations and 4 delivery vehicles.
         </p>
-        <ul class="bd-text" style="text-align: left;" style="margin-bottom: 0px;">
-          <li>With 4 locations there are 6 possible routes</li>
-          <li>With 11 locations there are 362,880 possible routes</li>
-          <li>With 21 locations there are 2,432,902,008,176,640,000 possible routes</li>
-        </ul>
-        <p class="bd-text" style="margin-bottom: 0px;">
-          Adding constraints to the routing problem further complicates the optimization.
-          Constraints of the problem include, for example, vehicle capacity, vehicle refill points, traffic jams, cancelled deliveries, or product type limitations.
-          I coded a solution taking into account the following constraints:
-        </p>
-        <ul class="bd-text" style="text-align: left;">
-          <li>Minimize traveling distance</li>
-          <li>N number of vehicles</li>
-          <li>M number of packages</li>
-          <li>Delivery deadlines of the packages</li>
-          <li>Driver's working hours</li>
-          <li>Driver's maximum single delivery distance</li>
-          <li>Driver's mandatory lunch break</li>
-        </ul>
+        <div class="collapse" id="collapse-2">
+          <p class="bd-text" style="margin-bottom: 0px;">
+            Challenged myself on learning how complex vehicle routing really is.
+            The underlying problem is to minimize the traveling distance by taking into account constraints and changing environment.
+            The simplest form of minimizing the distance without any constraints is called <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem">Traveling Salesperson Problem</a> (TSP).
+            Here are some numbers to understand the complexity of TSP:
+          </p>
+          <ul class="bd-text" style="text-align: left;" style="margin-bottom: 0px;">
+            <li>With 4 locations there are 6 possible routes</li>
+            <li>With 11 locations there are 362,880 possible routes</li>
+            <li>With 21 locations there are 2,432,902,008,176,640,000 possible routes</li>
+          </ul>
+          <p class="bd-text" style="margin-bottom: 0px;">
+            Adding constraints to the routing problem further complicates the optimization.
+            Constraints of the problem include, for example, vehicle capacity, vehicle refill points, traffic jams, cancelled deliveries, or product type limitations.
+            I coded a solution taking into account the following constraints:
+          </p>
+          <ul class="bd-text" style="text-align: left;">
+            <li>Minimize traveling distance</li>
+            <li>N number of vehicles</li>
+            <li>M number of packages</li>
+            <li>Delivery deadlines of the packages</li>
+            <li>Driver's working hours</li>
+            <li>Driver's maximum single delivery distance</li>
+            <li>Driver's mandatory lunch break</li>
+          </ul>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-2" class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">Read more &darr;</button></p>
       </div>
     </div>
   </div>
@@ -161,37 +189,49 @@
       <div class="my-3 p-3">
         <h2 class="display-5">Prostate cancer grade assessment</h2>
         <img width="100%" src="https://github.com/pettod/personal-website/assets/33998401/ac116f86-61a6-4a3a-934e-5fd22da48c1a" style="padding-bottom: 15px;">
-        <p class="bd-text">
-          With more than 1 million new diagnoses reported every year, prostate cancer (PCa) is the second most common cancer among males worldwide that results in more than 350,000 deaths annually.
-          The key to decreasing mortality is developing more precise diagnostics.
+        <p class="img-text">
+          Input of 4x4 concatenated blocks of tissue area with respective predicted and ground truth Gleason segmentation.*
         </p>
-        <p class="bd-text">
-          I created a deep learning model for diagnosing PCa from high-resolution images (average of 800 Mpx per image, maximum size >4000 Mpx).
-        </p>
-        <p class="bd-text">
-          Achieved validation kappa score 0.91 (6 ISUP grades in the Gleason grading system).
-          Segmented cell with normal, healthy, stroma and Gleason scores from 3 to 5.
-          Classified by using as large tissue area as possible.
-        </p>
-        <p class="bd-text" style="text-align: left; font-size: small; line-height: 21px;">
-          *Image segmentation from the public dataset: <a href="https://www.nature.com/articles/s41591-021-01620-2">https://www.nature.com/articles/s41591-021-01620-2</a>
-        </p>
+        <div class="collapse" id="collapse-3">
+          <p class="bd-text">
+            With more than 1 million new diagnoses reported every year, prostate cancer (PCa) is the second most common cancer among males worldwide that results in more than 350,000 deaths annually.
+            The key to decreasing mortality is developing more precise diagnostics.
+          </p>
+          <p class="bd-text">
+            I created a deep learning model for diagnosing PCa from high-resolution images (average of 800 Mpx per image, maximum size >4000 Mpx).
+          </p>
+          <p class="bd-text">
+            Achieved validation kappa score 0.91 (6 ISUP grades in the Gleason grading system).
+            Segmented cell with normal, healthy, stroma and Gleason scores from 3 to 5.
+            Classified by using as large tissue area as possible.
+          </p>
+          <p class="bd-text" style="text-align: left; font-size: small; line-height: 21px;">
+            *Image segmentation from the public dataset: <a href="https://www.nature.com/articles/s41591-021-01620-2">https://www.nature.com/articles/s41591-021-01620-2</a>
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-3" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">Read more &darr;</button></p>
       </div>
     </div>
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 p-3">
         <h2 class="display-5">Motion prediction for autonomous vehicles</h2>
         <img width="100%" src="https://github.com/pettod/personal-website/assets/33998401/d2cbc66a-544d-48ff-9a47-cd885208982e" style="padding-bottom: 15px;">
-        <p class="bd-text">
-          Deep learning model for an autonomous vehicle to predict the movement of traffic agents such as cars, cyclists, and pedestrians.
-          The target was to predict future trajectory from a given vector of (x,y) coordinates of the past trajectory.
+        <p class="img-text">
+          2D view of roads, traffic agents, and their trajectories. *
         </p>
-        <p class="bd-text">
-          By converting the coordinates to a bird eye view image, the approach of dealing with vector data was changed to image to image problem resulting in higher accuracy.
-        </p>
-        <p class="bd-text" style="text-align: left; font-size: small; line-height: 21px;">
-          *Image simulated from the public dataset: <a href="https://arxiv.org/abs/2006.14480">https://arxiv.org/abs/2006.14480</a>
-        </p>
+        <div class="collapse" id="collapse-4">
+          <p class="bd-text">
+            Deep learning model for an autonomous vehicle to predict the movement of traffic agents such as cars, cyclists, and pedestrians.
+            The target was to predict future trajectory from a given vector of (x,y) coordinates of the past trajectory.
+          </p>
+          <p class="bd-text">
+            By converting the coordinates to a bird eye view image, the approach of dealing with vector data was changed to image to image problem resulting in higher accuracy.
+          </p>
+          <p class="bd-text" style="text-align: left; font-size: small; line-height: 21px;">
+            *Image simulated from the public dataset: <a href="https://arxiv.org/abs/2006.14480">https://arxiv.org/abs/2006.14480</a>
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-4" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">Read more &darr;</button></p>
       </div>
     </div>
   </div>
@@ -202,32 +242,44 @@
       <div class="my-3 py-3">
         <h2 class="display-5">Molecular translation</h2>
         <img width="100%" src="https://github.com/pettod/bms-molecular-translation/assets/33998401/7d1d3d97-3660-4169-ae1d-75bbb0c1a828" style="padding-bottom: 15px;">
-        <p class="bd-text">
-          Sometimes the best and easiest tools are still pen and paper.
-          Organic chemists frequently draw out molecular work with the <a href="https://en.wikipedia.org/wiki/Skeletal_formula">Skeletal formula</a>, a structural notation used for centuries.
-          Recent publications are also annotated with machine-readable chemical descriptions (<a href="https://en.wikipedia.org/wiki/International_Chemical_Identifier">InChI</a>), but there are decades of scanned documents that can't be automatically searched for specific chemical depictions.
-          To speed up research and development efforts, an automated recognition of optical chemical structures will be helpful.
+        <p class="img-text">
+          Drawn Skeletal formula of an input molecule with respective ground truth InChI text. *
         </p>
-        <p class="bd-text">
-          I created a deep learning model to translate chemical images to InChI text.
-        </p>
-        <p class="bd-text" style="text-align: left; font-size: small; line-height: 21px;">
-          *Image sample from the public dataset: <a href="https://www.kaggle.com/competitions/bms-molecular-translation/data">https://www.kaggle.com/competitions/bms-molecular-translation/data</a>
-        </p>
+        <div class="collapse" id="collapse-5">
+          <p class="bd-text">
+            Sometimes the best and easiest tools are still pen and paper.
+            Organic chemists frequently draw out molecular work with the <a href="https://en.wikipedia.org/wiki/Skeletal_formula">Skeletal formula</a>, a structural notation used for centuries.
+            Recent publications are also annotated with machine-readable chemical descriptions (<a href="https://en.wikipedia.org/wiki/International_Chemical_Identifier">InChI</a>), but there are decades of scanned documents that can't be automatically searched for specific chemical depictions.
+            To speed up research and development efforts, an automated recognition of optical chemical structures will be helpful.
+          </p>
+          <p class="bd-text">
+            I created a deep learning model to translate chemical images to InChI text.
+          </p>
+          <p class="bd-text" style="text-align: left; font-size: small; line-height: 21px;">
+            *Image sample from the public dataset: <a href="https://www.kaggle.com/competitions/bms-molecular-translation/data">https://www.kaggle.com/competitions/bms-molecular-translation/data</a>
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-5" class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">Read more &darr;</button></p>
       </div>
     </div>
     <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="background-color: rgb(245, 245, 245);">
       <div class="my-3 py-3">
         <h2 class="display-5">Charuco corner detection</h2>
         <img width="100%" src="https://github.com/pettod/charuco-corner-detection/raw/master/document_images/detected_charuco_markers.gif" style="padding-bottom: 15px;">
-        <p class="bd-text">
-          Tool for camera calibration to detect checkerboard corners with corner identifications.
-          It is especially helpful for multi-camera calibration where all the cameras cannot see the whole checkerboard.
-          By knowing the corner identifications, one can use images with partly visible checkerboards for camera calibration.
+        <p class="img-text">
+          Real-time Charuco corner detection. All of the captured pictures (even without seeing or detecting every corner) can be used for camera calibration because every corner has an ID.
         </p>
-        <p class="bd-text">
-          Used Python OpenCV and embedded it into Matlab as well.
-        </p>
+        <div class="collapse" id="collapse-6">
+          <p class="bd-text">
+            Tool for camera calibration to detect checkerboard corners with corner identifications.
+            It is especially helpful for multi-camera calibration where all the cameras cannot see the whole checkerboard.
+            By knowing the corner identifications, one can use images with partly visible checkerboards for camera calibration.
+          </p>
+          <p class="bd-text">
+            Used Python OpenCV and embedded it into Matlab as well.
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-6" class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">Read more &darr;</button></p>
       </div>
     </div>
   </div>
@@ -240,28 +292,34 @@
         <div class="aspect-ratio-keeper">
           <iframe src="https://www.youtube.com/embed/qLBvez84VoA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="padding-bottom: 15px;"></iframe>
         </div>
-        <p class="bd-text" style="margin-bottom: 0px;">
-          Better visuals of <code style="color: rgb(74, 222, 66);">nvidia-smi</code> command.
-          What <code style="color: white;">nvidia-smi</code> command does is it shows the GPU utilization and memory usage in numbers in a terminal window.
-          It is not an intuitive view to understand the complete state of a GPU server.
-          What does this visualization tool then provide:
+        <p class="img-text">
+          Real-time GPU usage visualization in a virtual setup. 6 virtual servers connected to the dashboard.
         </p>
-        <ul class="bd-text" style="text-align: left;">
-          <li>Fast understanding of the state of multiple GPU servers
-            <ul>
-              <li>View of unlimited number of servers on a single page</li>
-            </ul>
-          </li>
-          <li>Real-time monitoring web dashboard</li>
-          <li>User specific statistics</li>
-          <li>User sorted GPU programs and their execution times</li>
-        </ul>
-        <p class="bd-text">
-          With the software, it is easier for the machine learning team to distribute workload evenly and stop training experiments which are not needed anymore.
-        </p>
-        <p class="bd-text">
-          Used technologies: Python, Flask, HTML, CSS, JS, Highcharts, Shell, and threading.
-        </p>
+        <div class="collapse" id="collapse-7">
+          <p class="bd-text" style="margin-bottom: 0px;">
+            Better visuals of <code style="color: rgb(74, 222, 66);">nvidia-smi</code> command.
+            What <code style="color: white;">nvidia-smi</code> command does is it shows the GPU utilization and memory usage in numbers in a terminal window.
+            It is not an intuitive view to understand the complete state of a GPU server.
+            What does this visualization tool then provide:
+          </p>
+          <ul class="bd-text" style="text-align: left;">
+            <li>Fast understanding of the state of multiple GPU servers
+              <ul>
+                <li>View of unlimited number of servers on a single page</li>
+              </ul>
+            </li>
+            <li>Real-time monitoring web dashboard</li>
+            <li>User specific statistics</li>
+            <li>User sorted GPU programs and their execution times</li>
+          </ul>
+          <p class="bd-text">
+            With the software, it is easier for the machine learning team to distribute workload evenly and stop training experiments which are not needed anymore.
+          </p>
+          <p class="bd-text">
+            Used technologies: Python, Flask, HTML, CSS, JS, Highcharts, Shell, and threading.
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-7" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-7" aria-expanded="false" aria-controls="collapse-7">Read more &darr;</button></p>
       </div>
     </div>
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
@@ -270,23 +328,29 @@
         <div class="aspect-ratio-keeper">
           <iframe src="https://www.youtube.com/embed/drcwjqq63-M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="padding-bottom: 15px;"></iframe>
         </div>
-        <p class="bd-text">
-          Turning electric devices (up to 2kW) on/off remotely, also known as home automation.
-          Being able to control your electric devices remotely might help you save time of not transporting to your home, cottage or office.
+        <p class="img-text">
+          Real-time remote LED control with the mobile phone app, Raspberry Pi and a relay card.
         </p>
-        <p class="bd-text">
-          I created a platform where users can login with Google account authentication and access multiple locations which to control remotely.
-        </p>
-        <p class="bd-text" style="margin-bottom: 0px;">
-          Overview of the tech:
-        </p>
-        <ul class="bd-text" style="text-align: left;">
-          <li>Relay card control through the GPIO pins of Raspberry Pi</li>
-          <li>MongoDB for user registration and session management</li>
-          <li>Routing between client, proxy server, backend server, and a terminal device</li>
-          <li>The terminal device controls a relay card that turns the devices either on or off</li>
-          <li>Used Node.js, Flask, HTML, JS, CSS, Python, and MongoDB</li>
-        </ul>
+        <div class="collapse" id="collapse-8">
+          <p class="bd-text">
+            Turning electric devices (up to 2kW) on/off remotely, also known as home automation.
+            Being able to control your electric devices remotely might help you save time of not transporting to your home, cottage or office.
+          </p>
+          <p class="bd-text">
+            I created a platform where users can login with Google account authentication and access multiple locations which to control remotely.
+          </p>
+          <p class="bd-text" style="margin-bottom: 0px;">
+            Overview of the tech:
+          </p>
+          <ul class="bd-text" style="text-align: left;">
+            <li>Relay card control through the GPIO pins of Raspberry Pi</li>
+            <li>MongoDB for user registration and session management</li>
+            <li>Routing between client, proxy server, backend server, and a terminal device</li>
+            <li>The terminal device controls a relay card that turns the devices either on or off</li>
+            <li>Used Node.js, Flask, HTML, JS, CSS, Python, and MongoDB</li>
+          </ul>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-8" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-8" aria-expanded="false" aria-controls="collapse-8">Read more &darr;</button></p>
       </div>
     </div>
   </div>
@@ -294,5 +358,17 @@
 </main>
 
 <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function readButtonChange(button_id) {
+    var button_text = document.getElementById(button_id);
+    var content = document.getElementById("collapse-".concat('', button_id.slice(-1)));
+    
+    if (button_text.innerHTML.lastIndexOf("less") >= 0) {
+      button_text.innerHTML = "Read more &darr;";
+    } else {
+      button_text.innerHTML = "Read less &uarr;";
+    }
+  } 
+</script>
   </body>
 </html>
