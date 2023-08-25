@@ -74,6 +74,10 @@
   align-items: center;
 }
 
+img {
+  border-radius: 15%;
+}
+
 /*
   * Extra utilities
   */
