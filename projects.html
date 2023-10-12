@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto" style="height: 100%;">
-  <head><script src="assets/js/color-modes.js"></script>
+  <head>
+    <script src="assets/js/color-modes.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -120,16 +124,26 @@
             A machine learning model includes model trainable parameters ‒ weights and biases ‒ activation functions, and skip connections. The feed forward process of applying the ML model to the inputs is called <em>Forward propagation</em>. Training of a ML model requires a learning phase to update the weights and biases. This learning phase is called <em><a href="https://en.wikipedia.org/wiki/Backpropagation">Backpropagation</a></em>.
           </p>
           <p class="bd-text">
-
+            The 2 main principles behind Backpropagation are <em><a href="https://en.wikipedia.org/wiki/Derivative">Derivative</a></em> and <em><a href="https://en.wikipedia.org/wiki/Chain_rule">Chain rule</a></em>. To define how to update a parameter, a gradient is computed for each parameter. The gradient of a parameter \(w'\) is defined by the derivative of the loss \(L\) with respect to the parameter \(w\)
+          </p>
+          <p class="bd-text" style="text-align: center;">
+            \(w' = \frac{dL}{dw}\).
+          </p>
+          <p class="bd-text">
+            To compute the gradient to the parameters which have operations between the loss and the parameter, require chain rule. The chain rule expresses the derivative of the composition of two differentiable functions in terms of the derivatives of the two separate functions. By knowing the derivative of loss \(L\) with respect to \(w_{1}\) and the derivate of \(w_{1}\) with respect to \(w_{0}\), then the derivative of loss \(L\) with respect to \(w_{0}\) will be:
+          </p>
+          <p class="bd-text" style="text-align: center;">
+            \(\frac{dL}{dw_{0}} = \frac{dw_{1}}{dw_{0}} \cdot \frac{dL}{dw_{1}}\).
           </p>
           <p class="bd-text" style="margin-bottom: 0px;">
-            The features which I implemented with Python:
+            In this project, I coded an own implementation of a neural network framework without using any common deep learning frameworks. The features which I implemented with Python were:
           </p>
           <ul class="bd-text" style="text-align: left;">
             <li>General</li>
             <ul class="bd-text" style="text-align: left; margin-bottom: 0px;">
               <li>Forward propagation</li>
               <li>Backpropagation</li>
+              <li>Network visualization</li>
             </ul>
             <li>Layers</li>
             <ul class="bd-text" style="text-align: left; margin-bottom: 0px;">
