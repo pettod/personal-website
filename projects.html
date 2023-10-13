@@ -208,7 +208,7 @@
             While debugging and visualizing the reason why my network didn't learn I came across <em><a href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks)"> Dying ReLU</a></em> problem. Some units may always output zero (they are "dead" neurons) and don't update their weights during training. To address this problem, variations of ReLU have been proposed, such as Leaky ReLU, Parametric ReLU (PReLU), and Exponential Linear Unit (ELU), which aim to allow a small gradient for negative inputs to prevent neurons from becoming completely inactive.
           </p>
         </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-1" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-backpropagation" aria-expanded="false" aria-controls="collapse-backpropagation">Read more &darr;</button></p>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-brackpropagation" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-backpropagation" aria-expanded="false" aria-controls="collapse-backpropagation">Read more &darr;</button></p>
       </div>
     </div>
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
@@ -218,7 +218,7 @@
         <p class="img-text">
           Real-time deepfake face detection and classification. See the moving ghost between the faces causing fake classification.*
         </p>
-        <div class="collapse" id="collapse-1">
+        <div class="collapse" id="collapse-deepfake">
           <p class="bd-text">
             Deepfake techniques, which present realistic AI-generated videos of people doing and saying fictional things, have the potential to have a significant impact on how people determine the legitimacy of information presented online.
             These content generation and modification technologies may affect the quality of public discourse and the safeguarding of human rights — especially given that deepfakes may be used maliciously as a source of misinformation, manipulation, harassment, and persuasion.
@@ -249,7 +249,7 @@
             *Video detection from the public dataset: <a href="https://arxiv.org/abs/2006.07397">https://arxiv.org/abs/2006.07397</a>
           </p>
         </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-1" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">Read more &darr;</button></p>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-deepfake" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-deepfake" aria-expanded="false" aria-controls="collapse-deepfake">Read more &darr;</button></p>
       </div>
     </div>
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
@@ -259,7 +259,7 @@
         <p class="img-text">
           Finding optimal route with 301 locations and 4 delivery vehicles.
         </p>
-        <div class="collapse" id="collapse-2">
+        <div class="collapse" id="collapse-package">
           <p class="bd-text" style="margin-bottom: 0px;">
             Challenged myself on learning how complex vehicle routing really is.
             The underlying problem is to minimize the traveling distance by taking into account constraints and changing environment.
@@ -286,7 +286,7 @@
             <li>Driver's mandatory lunch break</li>
           </ul>
         </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-2" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">Read more &darr;</button></p>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-package" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-package" aria-expanded="false" aria-controls="collapse-package">Read more &darr;</button></p>
       </div>
     </div>
   </div>
@@ -300,7 +300,7 @@
         <p class="img-text">
           Input of 4x4 concatenated blocks of tissue area with respective predicted and ground truth Gleason segmentation.*
         </p>
-        <div class="collapse" id="collapse-3">
+        <div class="collapse" id="collapse-cancer">
           <p class="bd-text">
             With more than 1 million new diagnoses reported every year, prostate cancer (PCa) is the second most common cancer among males worldwide that results in more than 350,000 deaths annually.
             The key to decreasing mortality is developing more precise diagnostics.
@@ -317,7 +317,7 @@
             *Image segmentation from the public dataset: <a href="https://www.nature.com/articles/s41591-021-01620-2">https://www.nature.com/articles/s41591-021-01620-2</a>
           </p>
         </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-3" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">Read more &darr;</button></p>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-cancer" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cancer" aria-expanded="false" aria-controls="collapse-cancer">Read more &darr;</button></p>
       </div>
     </div>
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
@@ -327,7 +327,7 @@
         <p class="img-text">
           2D view of roads, traffic agents, and their trajectories.*
         </p>
-        <div class="collapse" id="collapse-4">
+        <div class="collapse" id="collapse-lyft">
           <p class="bd-text">
             Deep learning model for an autonomous vehicle to predict the movement of traffic agents such as cars, cyclists, and pedestrians.
             The target was to predict future trajectory from a given vector of (x,y) coordinates of the past trajectory.
@@ -339,7 +339,7 @@
             *Image simulated from the public dataset: <a href="https://arxiv.org/abs/2006.14480">https://arxiv.org/abs/2006.14480</a>
           </p>
         </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-4" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">Read more &darr;</button></p>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-lyft" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-lyft" aria-expanded="false" aria-controls="collapse-lyft">Read more &darr;</button></p>
       </div>
     </div>
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
@@ -349,7 +349,7 @@
         <p class="img-text">
           Drawn Skeletal formula of an input molecule and a corresponding ground truth InChI text.*
         </p>
-        <div class="collapse" id="collapse-5">
+        <div class="collapse" id="collapse-inchi">
           <p class="bd-text">
             Sometimes the best and easiest tools are still pen and paper.
             Organic chemists frequently draw out molecular work with the <a href="https://en.wikipedia.org/wiki/Skeletal_formula">Skeletal formula</a>, a structural notation used for centuries.
@@ -363,7 +363,7 @@
             *Image sample from the public dataset: <a href="https://www.kaggle.com/competitions/bms-molecular-translation/data">https://www.kaggle.com/competitions/bms-molecular-translation/data</a>
           </p>
         </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-5" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">Read more &darr;</button></p>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-inchi" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-inchi" aria-expanded="false" aria-controls="collapse-inchi">Read more &darr;</button></p>
       </div>
     </div>
   </div>
@@ -377,7 +377,7 @@
         <p class="img-text">
           Real-time Charuco corner detection. All of the captured pictures (even without seeing or detecting every corner) can be used for camera calibration because every corner has an ID.
         </p>
-        <div class="collapse" id="collapse-6">
+        <div class="collapse" id="collapse-charuco">
           <p class="bd-text">
             Tool for camera calibration to detect checkerboard corners with corner identifications.
             It is especially helpful for multi-camera calibration where all the cameras cannot see the whole checkerboard.
@@ -387,7 +387,7 @@
             Used Python OpenCV and embedded it into Matlab as well.
           </p>
         </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-6" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">Read more &darr;</button></p>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-charuco" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-charuco" aria-expanded="false" aria-controls="collapse-charuco">Read more &darr;</button></p>
       </div>
     </div>
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
@@ -399,7 +399,7 @@
         <p class="img-text">
           Real-time GPU usage visualization in a virtual setup. 6 virtual servers connected to the dashboard.
         </p>
-        <div class="collapse" id="collapse-7">
+        <div class="collapse" id="collapse-gpu">
           <p class="bd-text" style="margin-bottom: 0px;">
             Better visuals of <code style="color: rgb(74, 222, 66);">nvidia-smi</code> command.
             What <code style="color: white;">nvidia-smi</code> command does is it shows the GPU utilization and memory usage in numbers in a terminal window.
@@ -423,7 +423,7 @@
             Used technologies: Python, Flask, HTML, CSS, JS, Highcharts, Shell, and threading.
           </p>
         </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-7" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-7" aria-expanded="false" aria-controls="collapse-7">Read more &darr;</button></p>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-gpu" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-gpu" aria-expanded="false" aria-controls="collapse-gpu">Read more &darr;</button></p>
       </div>
     </div>
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
@@ -435,7 +435,7 @@
         <p class="img-text">
           Real-time remote LED control with the mobile phone app, Raspberry Pi and a relay card.
         </p>
-        <div class="collapse" id="collapse-8">
+        <div class="collapse" id="collapse-remote">
           <p class="bd-text">
             Turning electric devices (up to 2kW) on/off remotely, also known as home automation.
             Being able to control your electric devices remotely might help you save time of not transporting to your home, cottage or office.
@@ -454,7 +454,7 @@
             <li>Used Node.js, Flask, HTML, JS, CSS, Python, and MongoDB</li>
           </ul>
         </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-8" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-8" aria-expanded="false" aria-controls="collapse-8">Read more &darr;</button></p>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-remote" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-remote" aria-expanded="false" aria-controls="collapse-remote">Read more &darr;</button></p>
       </div>
     </div>
   </div>
