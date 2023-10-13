@@ -120,23 +120,59 @@
           Learning process of a single neuron. Included components: 2 weights, bias, ReLU, mean squared error, and gradient decent.
         </p>
         <div class="collapse" id="collapse-backpropagation">
+          <h4>Introduction</h4>
           <p class="bd-text">
             A machine learning model includes model trainable parameters ‒ weights and biases ‒ activation functions, and skip connections. The feed forward process of applying the ML model to the inputs is called <em>Forward propagation</em>. Training of a ML model requires a learning phase to update the weights and biases. This learning phase is called <em><a href="https://en.wikipedia.org/wiki/Backpropagation">Backpropagation</a></em>.
           </p>
+          <h4>Theory</h4>
           <p class="bd-text">
             The 2 main principles behind Backpropagation are <em><a href="https://en.wikipedia.org/wiki/Derivative">Derivative</a></em> and <em><a href="https://en.wikipedia.org/wiki/Chain_rule">Chain rule</a></em>. To define how to update a parameter, a gradient is computed for each parameter. The gradient of a parameter \(w'\) is defined by the derivative of the loss \(L\) with respect to the parameter \(w\)
           </p>
           <p class="bd-text" style="text-align: center;">
-            \(w' = \frac{dL}{dw}\).
+            \[w' = \frac{dL}{dw}\]
           </p>
           <p class="bd-text">
             To compute the gradient to the parameters which have operations between the loss and the parameter, require chain rule. The chain rule expresses the derivative of the composition of two differentiable functions in terms of the derivatives of the two separate functions. By knowing the derivative of loss \(L\) with respect to \(w_{1}\) and the derivate of \(w_{1}\) with respect to \(w_{0}\), then the derivative of loss \(L\) with respect to \(w_{0}\) will be:
           </p>
           <p class="bd-text" style="text-align: center;">
-            \(\frac{dL}{dw_{0}} = \frac{dw_{1}}{dw_{0}} \cdot \frac{dL}{dw_{1}}\).
+            \[\frac{dL}{dw_{0}} = \frac{dw_{1}}{dw_{0}} \cdot \frac{dL}{dw_{1}}\]
           </p>
+          <p class="bd-text">
+            To find the derivative of a weight multiplication and a bias addition functions, we could use the definition of a differentiable function and calculate the <a href="https://en.wikipedia.org/wiki/Limit_(mathematics)">limit</a> \(L\):
+          </p>
+          <p class="bd-text" style="text-align: center;">
+            \[L = \lim\limits_{h \to 0} \frac{f(a + h) - f(a)}{h}\]
+          </p>
+          <p class="bd-text">
+            In a weight multiplication, the input \(i\) is multiplied with a weight \(w\), hence the function will be \(f(iw) = iw\). Now, we can use the definition of a differentiable function and calculate the derivative of \(f(iw)\):
+          </p>
+          <p class="bd-text" style="text-align: center;">
+            \[f'(iw) = \lim\limits_{h \to 0} \frac{i(w+h) - iw}{h}\]
+            \[f'(iw) = \lim\limits_{h \to 0} \frac{iw + ih - iw}{h}\]
+            \[f'(iw) = \lim\limits_{h \to 0} \frac{ih}{h}\]
+            \[f'(iw) \to i\]
+          </p>
+          <p class="bd-text">
+            As seen, the "local derivative" of an input multiplied by a weight with respect to the weight is the value of the input. To obtain the final derivative which we need ‒ the derivative of the loss with respect to the weight ‒ the "local derivative" has to be multiplied with the rest of the chain rule derivatives.
+          </p>
+          <p class="bd-text">
+            Similarly, let's derive the local derivative of a bias addition. A bias \(b\) is added to the outputs of weight multiplications \(o\). Thus, the derivate of the function \(f(o + b) = o + b\) will be: 
+          </p>
+          <p class="bd-text" style="text-align: center;">
+            \[f'(o + b) = \lim\limits_{h \to 0} \frac{o + (x+h) - (o+x)}{h}\]
+            \[f'(o + b) = \lim\limits_{h \to 0} \frac{o + x + h - o - x}{h}\]
+            \[f'(o + b) = \lim\limits_{h \to 0} \frac{h}{h}\]
+            \[f'(o + b) \to 1\]
+          </p>
+          <p class="bd-text">
+            Here, the local derivative is 1. Therefore, the derivative of the loss with respect to a bias is 1 multiplied by the rest of the chain rule derivatives.
+          </p>
+          <p class="bd-text">
+            The derivatives of complex activation functions one could just search online and implement in the code. That's what I did.
+          </p>
+          <h4>Implementation</h4>
           <p class="bd-text" style="margin-bottom: 0px;">
-            In this project, I coded an own implementation of a neural network framework without using any common deep learning frameworks. The features which I implemented with Python were:
+            In this project, I got into <em><a href="https://en.wikipedia.org/wiki/First_principle">First principles</a></em> of deep learning. I coded an own implementation of a neural network framework without using any common deep learning frameworks. The features which I implemented with Python were:
           </p>
           <ul class="bd-text" style="text-align: left;">
             <li>General</li>
