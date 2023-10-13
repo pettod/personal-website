@@ -117,7 +117,7 @@
         <h2 class="display-6">Backpropagation</h2>
         <img class="img-border" width="100%" src="https://user-images.githubusercontent.com/33998401/274561674-b0de8b2e-3e7a-4538-befc-aec0873632de.gif">
         <p class="img-text">
-          Learning process of a single neuron. Included components: 2 weights, bias, ReLU, mean squared error, and gradient decent.
+          Learning process of a single neuron. Included components: 2 weights, bias, ReLU, mean squared error, and gradient descent.
         </p>
         <div class="collapse" id="collapse-backpropagation">
           <h4>Introduction</h4>
@@ -156,7 +156,7 @@
           </ul>
           <h4>Theory</h4>
           <p class="bd-text">
-            The 2 main principles behind Backpropagation are <em><a href="https://en.wikipedia.org/wiki/Derivative">Derivative</a></em> and <em><a href="https://en.wikipedia.org/wiki/Chain_rule">Chain rule</a></em>. To define how to update a parameter, a gradient is computed for each parameter. The gradient of a parameter \(w'\) is defined by the derivative of the loss \(L\) with respect to the parameter \(w\)
+            The 2 main principles behind backpropagation are <em><a href="https://en.wikipedia.org/wiki/Derivative">Derivative</a></em> and <em><a href="https://en.wikipedia.org/wiki/Chain_rule">Chain rule</a></em>. To define how to update a parameter, a gradient is computed for each parameter. The gradient of a parameter \(w'\) is defined by the derivative of the loss \(L\) with respect to the parameter \(w\)
           </p>
           <p class="bd-text" style="text-align: center;">
             \[w' = \frac{dL}{dw}\]
@@ -174,25 +174,25 @@
             \[L = \lim\limits_{h \to 0} \frac{f(a + h) - f(a)}{h}\]
           </p>
           <p class="bd-text">
-            In a weight multiplication, the input \(i\) is multiplied with a weight \(w\), hence the function will be \(f(iw) = iw\). Now, we can use the definition of a differentiable function and calculate the derivative of \(f(iw)\):
+            In a weight multiplication, the input \(i\) is multiplied with a weight \(w\), hence the function will be \(f(w) = iw\). Now, we can use the definition of a differentiable function and calculate the derivative of \(f(w)\):
           </p>
           <p class="bd-text" style="text-align: center;">
-            \[f'(iw) = \lim\limits_{h \to 0} \frac{i(w+h) - iw}{h}\]
-            \[f'(iw) = \lim\limits_{h \to 0} \frac{iw + ih - iw}{h}\]
-            \[f'(iw) = \lim\limits_{h \to 0} \frac{ih}{h}\]
-            \[f'(iw) \to i\]
+            \[f'(w) = \lim\limits_{h \to 0} \frac{i(w+h) - iw}{h}\]
+            \[f'(w) = \lim\limits_{h \to 0} \frac{iw + ih - iw}{h}\]
+            \[f'(w) = \lim\limits_{h \to 0} \frac{ih}{h}\]
+            \[f'(w) \to i\]
           </p>
           <p class="bd-text">
             As seen, the "local derivative" of an input multiplied by a weight with respect to the weight is the value of the input. To obtain the final derivative which we need ‒ the derivative of the loss with respect to the weight ‒ the "local derivative" has to be multiplied with the rest of the chain rule derivatives.
           </p>
           <p class="bd-text">
-            Similarly, let's derive the local derivative of a bias addition. In a neuron, a bias \(b\) is added to the outputs of weight multiplications \(o\). Thus, the derivate of the function \(f(o + b) = o + b\) will be: 
+            Similarly, let's derive the local derivative of a bias addition. In a neuron, a bias \(b\) is added to the outputs of weight multiplications \(o\). Thus, the derivate of the function \(f(b) = o + b\) will be: 
           </p>
           <p class="bd-text" style="text-align: center;">
-            \[f'(o + b) = \lim\limits_{h \to 0} \frac{o + (b+h) - (o+b)}{h}\]
-            \[f'(o + b) = \lim\limits_{h \to 0} \frac{o + b + h - o - b}{h}\]
-            \[f'(o + b) = \lim\limits_{h \to 0} \frac{h}{h}\]
-            \[f'(o + b) \to 1\]
+            \[f'(b) = \lim\limits_{h \to 0} \frac{o + (b+h) - (o+b)}{h}\]
+            \[f'(b) = \lim\limits_{h \to 0} \frac{o + b + h - o - b}{h}\]
+            \[f'(b) = \lim\limits_{h \to 0} \frac{h}{h}\]
+            \[f'(b) \to 1\]
           </p>
           <p class="bd-text">
             Here, the local derivative is 1. Therefore, the derivative of the loss with respect to a bias is 1 multiplied by the rest of the chain rule derivatives.
