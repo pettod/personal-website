@@ -170,6 +170,9 @@
           <p class="bd-text">
             The derivatives of complex activation functions one could just search online and implement in the code. That's what I did.
           </p>
+          <p class="bd-text">
+            Finally, when the gradients are computed for each parameter, it's time to apply them and update the parameters. The simplest optimizer used to apply the gradients is <em><a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient descent</a></em> (GD). The derivative shows the direction of growth but when training a neural network, we want to minimize the loss hence take a step (<em><a href="https://en.wikipedia.org/wiki/Learning_rate">Learning rate</a></em>) to the direction of a negative gradient.
+          </p>
           <h4>Implementation</h4>
           <p class="bd-text" style="margin-bottom: 0px;">
             In this project, I got into <em><a href="https://en.wikipedia.org/wiki/First_principle">First principles</a></em> of deep learning. I coded an own implementation of a neural network framework without using any common deep learning frameworks. The features which I implemented with Python were:
@@ -197,7 +200,7 @@
             </ul>
             <li>Optimizers</li>
             <ul class="bd-text" style="text-align: left; margin-bottom: 0px;">
-              <li>Gradient decent</li>
+              <li>Gradient descent</li>
             </ul>
           </ul>
         </div>
