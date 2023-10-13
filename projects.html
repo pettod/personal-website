@@ -159,8 +159,8 @@
             Similarly, let's derive the local derivative of a bias addition. A bias \(b\) is added to the outputs of weight multiplications \(o\). Thus, the derivate of the function \(f(o + b) = o + b\) will be: 
           </p>
           <p class="bd-text" style="text-align: center;">
-            \[f'(o + b) = \lim\limits_{h \to 0} \frac{o + (x+h) - (o+x)}{h}\]
-            \[f'(o + b) = \lim\limits_{h \to 0} \frac{o + x + h - o - x}{h}\]
+            \[f'(o + b) = \lim\limits_{h \to 0} \frac{o + (b+h) - (o+b)}{h}\]
+            \[f'(o + b) = \lim\limits_{h \to 0} \frac{o + b + h - o - b}{h}\]
             \[f'(o + b) = \lim\limits_{h \to 0} \frac{h}{h}\]
             \[f'(o + b) \to 1\]
           </p>
