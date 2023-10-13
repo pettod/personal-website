@@ -203,6 +203,10 @@
               <li>Gradient descent</li>
             </ul>
           </ul>
+          <h4>Interesting findings</h4>
+          <p class="bd-text">
+            While debugging and visualizing the reason why my network didn't learn I came across <em><a href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks)"> Dying ReLU</a></em> problem. Some units may always output zero (they are "dead" neurons) and don't update their weights during training. To address this problem, variations of ReLU have been proposed, such as Leaky ReLU, Parametric ReLU (PReLU), and Exponential Linear Unit (ELU), which aim to allow a small gradient for negative inputs to prevent neurons from becoming completely inactive.
+          </p>
         </div>
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-1" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-backpropagation" aria-expanded="false" aria-controls="collapse-backpropagation">Read more &darr;</button></p>
       </div>
