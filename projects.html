@@ -166,10 +166,10 @@
           </ul>
           <h4>Theory</h4>
           <p class="bd-text">
-            The main principle behind backpropagation is <em><a href="https://en.wikipedia.org/wiki/Derivative">Derivative</a></em>. To define how to update the neural network during an iteration, one needs to compute a gradient for each parameter. The gradient determines how much a parameter affects the loss, e.g. a parameter with gradient 0 contributes nothing to the loss. The gradient of a parameter \(p'\) is defined by the derivative of the loss \(l\) with respect to the parameter \(p\)
+            The main principle behind backpropagation is <em><a href="https://en.wikipedia.org/wiki/Derivative">Derivative</a></em>. To define how to update the neural network during an iteration, one needs to compute a gradient for each parameter. The gradient determines how much a parameter affects the loss, e.g. a parameter with a gradient 0 contributes nothing to the loss. The gradient of a parameter \(g_{p}\) is defined by the derivative of the loss \(l\) with respect to the parameter \(p\):
           </p>
           <p class="bd-text" style="text-align: center;">
-            \[p' = \frac{dl}{dp}\]
+            \[g_{p} = \frac{dl}{dp}\]
           </p>
           <p class="bd-text">
             To compute the gradient of a parameter which has operations between the loss and the parameter, require <em><a href="https://en.wikipedia.org/wiki/Chain_rule">Chain rule</a></em>. The chain rule expresses the derivative of the composition of two differentiable functions in terms of the derivatives of the two separate functions. By knowing the derivative of a loss \(l\) with respect to a weight \(w_{1}\) and the derivate of the weight \(w_{1}\) with respect to a weight \(w_{0}\), then the derivative of \(l\) with respect to \(w_{0}\) will be:
@@ -219,9 +219,9 @@
             The derivatives of complex activation functions one could just search online and implement to the code. That's what I did.
           </p>
           <p class="bd-text">
-            Finally, when the gradients are computed for each parameter, it's time to apply them and update the parameters. The simplest optimizer used to apply the gradients is <em><a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient descent</a></em>. The derivative shows the direction of growth but when training a neural network, we want to minimize the loss hence take a step (<em><a href="https://en.wikipedia.org/wiki/Learning_rate">Learning rate</a></em>) to the direction of a negative gradient. That means, using gradient descent the updated value of a parameter \(p\) is:
-            \[p_{u} = - g \cdot r \cdot p_{o}\]
-            where \(p_{u}\) is the updated value of a parameter, \(g\) is the gradient, \(r\) is the learning rate, and \(p_{o}\) is the old value of the parameter.
+            Finally, when the gradients are computed for each parameter, it's time to apply them and update the parameters. The simplest optimizer used to apply the gradients is <em><a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient descent</a></em>. The derivative shows the direction of growth but when training a neural network, we want to minimize the loss hence take a step (<em><a href="https://en.wikipedia.org/wiki/Learning_rate">Learning rate</a></em>) to the direction of a negative gradient. That means, using gradient descent the updated value of a parameter \(p\) will be:
+            \[p_{u} = - g_{p} \cdot r \cdot p_{o}\]
+            where \(p_{u}\) is the updated value of a parameter, \(g_{p}\) is the gradient of the parameter, \(r\) is the learning rate, and \(p_{o}\) is the old value of the parameter.
           </p>
           <h4>Interesting findings</h4>
           <p class="bd-text">
