@@ -187,10 +187,14 @@
             In a weight multiplication, the input \(i\) is multiplied with a weight \(w\), hence the function will be \(f(w) = iw\). Now, we can use the definition of a differentiable function and calculate the derivative of \(f(w)\):
           </p>
           <p class="bd-text" style="text-align: center;">
-            \[f'(w) = \lim\limits_{h \to 0} \frac{i(w+h) - iw}{h}\]
-            \[f'(w) = \lim\limits_{h \to 0} \frac{iw + ih - iw}{h}\]
-            \[f'(w) = \lim\limits_{h \to 0} \frac{ih}{h}\]
-            \[f'(w) \to i\]
+            $$
+            \begin{align}
+              f'(w) &= \lim\limits_{h \to 0} \frac{i(w+h) - iw}{h}\\
+              &= \lim\limits_{h \to 0} \frac{iw + ih - iw}{h}\\
+              &= \lim\limits_{h \to 0} \frac{ih}{h}\\
+              &= i
+            \end{align}
+            $$
           </p>
           <p class="bd-text">
             As seen, the "local derivative" of an input multiplied by a weight with respect to the weight is the value of the input. To obtain the final derivative which we need ‒ the derivative of the loss with respect to the weight ‒ the "local derivative" has to be multiplied with the rest of the chain rule derivatives.
@@ -199,10 +203,14 @@
             Similarly, let's derive the local derivative of a bias addition. In a neuron, a bias \(b\) is added to the outputs of weight multiplications \(o\). Thus, the derivate of the function \(f(b) = o + b\) will be: 
           </p>
           <p class="bd-text" style="text-align: center;">
-            \[f'(b) = \lim\limits_{h \to 0} \frac{o + (b+h) - (o+b)}{h}\]
-            \[f'(b) = \lim\limits_{h \to 0} \frac{o + b + h - o - b}{h}\]
-            \[f'(b) = \lim\limits_{h \to 0} \frac{h}{h}\]
-            \[f'(b) \to 1\]
+            $$
+            \begin{align}
+              f'(b) &= \lim\limits_{h \to 0} \frac{o + (b+h) - (o+b)}{h}\\
+              &= \lim\limits_{h \to 0} \frac{o + b + h - o - b}{h}\\
+              &= \lim\limits_{h \to 0} \frac{h}{h}\\
+              &= 1
+            \end{align}
+            $$
           </p>
           <p class="bd-text">
             Here, the local derivative is 1. Therefore, the derivative of the loss with respect to a bias is 1 multiplied by the rest of the chain rule derivatives.
