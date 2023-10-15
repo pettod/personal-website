@@ -166,16 +166,16 @@
           </ul>
           <h4>Theory</h4>
           <p class="bd-text">
-            The 2 main principles behind backpropagation are <em><a href="https://en.wikipedia.org/wiki/Derivative">Derivative</a></em> and <em><a href="https://en.wikipedia.org/wiki/Chain_rule">Chain rule</a></em>. To define how to update a parameter, a gradient is computed for each parameter. The gradient of a parameter \(w'\) is defined by the derivative of the loss \(L\) with respect to the parameter \(w\)
+            The main principle behind backpropagation is <em><a href="https://en.wikipedia.org/wiki/Derivative">Derivative</a></em>. To define how to update the neural network during an iteration, one needs to compute a gradient for each parameter. The gradient determines how much a parameter affects the loss, e.g. a parameter with gradient 0 contributes nothing to the loss. The gradient of a parameter \(p'\) is defined by the derivative of the loss \(l\) with respect to the parameter \(p\)
           </p>
           <p class="bd-text" style="text-align: center;">
-            \[w' = \frac{dL}{dw}\]
+            \[p' = \frac{dl}{dp}\]
           </p>
           <p class="bd-text">
-            To compute the gradient to the parameters which have operations between the loss and the parameter, require chain rule. The chain rule expresses the derivative of the composition of two differentiable functions in terms of the derivatives of the two separate functions. By knowing the derivative of a loss \(L\) with respect to a weight \(w_{1}\) and the derivate of the weight \(w_{1}\) with respect to a weight \(w_{0}\), then the derivative of \(L\) with respect to \(w_{0}\) will be:
+            To compute the gradient of a parameter which has operations between the loss and the parameter, require <em><a href="https://en.wikipedia.org/wiki/Chain_rule">Chain rule</a></em>. The chain rule expresses the derivative of the composition of two differentiable functions in terms of the derivatives of the two separate functions. By knowing the derivative of a loss \(l\) with respect to a weight \(w_{1}\) and the derivate of the weight \(w_{1}\) with respect to a weight \(w_{0}\), then the derivative of \(l\) with respect to \(w_{0}\) will be:
           </p>
           <p class="bd-text" style="text-align: center;">
-            \[\frac{dL}{dw_{0}} = \frac{dw_{1}}{dw_{0}} \cdot \frac{dL}{dw_{1}}\]
+            \[\frac{dl}{dw_{0}} = \frac{dw_{1}}{dw_{0}} \cdot \frac{dl}{dw_{1}}\]
           </p>
           <p class="bd-text">
             To find the derivative of a weight multiplication and a bias addition functions, we could use the definition of a differentiable function and calculate the <a href="https://en.wikipedia.org/wiki/Limit_(mathematics)">limit</a> \(L\):
@@ -216,10 +216,12 @@
             Here, the local derivative is 1. Therefore, the derivative of the loss with respect to a bias is 1 multiplied by the rest of the chain rule derivatives.
           </p>
           <p class="bd-text">
-            The derivatives of complex activation functions one could just search online and implement in the code. That's what I did.
+            The derivatives of complex activation functions one could just search online and implement to the code. That's what I did.
           </p>
           <p class="bd-text">
-            Finally, when the gradients are computed for each parameter, it's time to apply them and update the parameters. The simplest optimizer used to apply the gradients is <em><a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient descent</a></em> (GD). The derivative shows the direction of growth but when training a neural network, we want to minimize the loss hence take a step (<em><a href="https://en.wikipedia.org/wiki/Learning_rate">Learning rate</a></em>) to the direction of a negative gradient.
+            Finally, when the gradients are computed for each parameter, it's time to apply them and update the parameters. The simplest optimizer used to apply the gradients is <em><a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient descent</a></em>. The derivative shows the direction of growth but when training a neural network, we want to minimize the loss hence take a step (<em><a href="https://en.wikipedia.org/wiki/Learning_rate">Learning rate</a></em>) to the direction of a negative gradient. That means, using gradient descent the updated value of a parameter \(p\) is:
+            \[p_{u} = - g \cdot r \cdot p_{o}\]
+            where \(p_{u}\) is the updated value of a parameter, \(g\) is the gradient, \(r\) is the learning rate, and \(p_{o}\) is the old value of the parameter.
           </p>
           <h4>Interesting findings</h4>
           <p class="bd-text">
