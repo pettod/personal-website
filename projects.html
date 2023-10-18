@@ -178,7 +178,7 @@
             \[\frac{dl}{dw_{0}} = \frac{dw_{1}}{dw_{0}} \cdot \frac{dl}{dw_{1}}\]
           </p>
           <p class="bd-text">
-            To find the derivative of a weight multiplication and a bias addition functions, we could use the definition of a differentiable function and calculate the <a href="https://en.wikipedia.org/wiki/Limit_(mathematics)">limit</a> \(L\):
+            To find the derivative of a weight multiplication and a bias addition functions, we could use the definition of a differentiable function and calculate <em><a href="https://en.wikipedia.org/wiki/Limit_(mathematics)">Limit</a></em> \(L\):
           </p>
           <p class="bd-text" style="text-align: center;">
             \[L = \lim\limits_{h \to 0} \frac{f(a + h) - f(a)}{h}\]
@@ -222,6 +222,12 @@
             Finally, when the gradients are computed for each parameter, it's time to apply them and update the parameters. The simplest optimizer used to apply the gradients is <em><a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient descent</a></em>. The derivative shows the direction of growth but when training a neural network, we want to minimize the loss hence take a step (<em><a href="https://en.wikipedia.org/wiki/Learning_rate">Learning rate</a></em>) to the direction of a negative gradient. That means, using gradient descent the updated value of a parameter \(p\) will be:
             \[p_{u} = - g_{p} \cdot r \cdot p_{o}\]
             where \(p_{u}\) is the updated value of a parameter, \(g_{p}\) is the gradient of the parameter, \(r\) is the learning rate, and \(p_{o}\) is the old value of the parameter.
+          </p>
+          <p class="bd-text">
+            The last piece of an iteration is to zero gradients. As the gradients have already been applied to the parameters, we do not want to keep them anymore accumulating in the training process.
+          </p>
+          <p class="bd-text">
+            There you have it, a comprehensive description of how neural networks are built and how they learn. This text explained all the necessary steps required to train a neural network successfully. To enhance the results, there are multiple different components offered which all rely on the theory of derivate.
           </p>
           <h4>Interesting findings</h4>
           <p class="bd-text">
