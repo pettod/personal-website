@@ -86,3 +86,10 @@
     flex: 1;
   }
 }
+/* Match mobile navbar padding with body padding */
+@media (max-width: 767px) {
+  .container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
