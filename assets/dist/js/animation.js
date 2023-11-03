@@ -1,17 +1,19 @@
 const canvas = document.getElementById("canvas");
 const topdiv = document.getElementById("topdiv");
 const context = canvas.getContext("2d");
-canvas.width = topdiv.offsetWidth;
-canvas.height = topdiv.offsetHeight;
+var width_org = topdiv.offsetWidth;
+var height_org = topdiv.offsetHeight;
+canvas.width = width_org;
+canvas.height = height_org;
 
-const particleArray = [];
+var particleArray = [];
 class Particle {
 	constructor(x = 0, y = 0) {
 		this.connections = [];
 		this.speed = 0.2;
 		this.radius = 10;
-		this.x = Math.min(Math.max(this.radius, x), canvas.width - this.radius);
-		this.y = Math.min(Math.max(this.radius, y), canvas.height - this.radius);
+		this.x = Math.min(Math.max(this.radius, x), width_org - this.radius);
+		this.y = Math.min(Math.max(this.radius, y), height_org - this.radius);
 		this.dx = (Math.random() - 0.5) * this.speed;
 		this.dy = (Math.random() - 0.5) * this.speed;
 	}
@@ -41,20 +43,19 @@ class Particle {
 		context.lineWidth = 2;
 
 		const number_of_connections = 2;
-		if (Math.random() < 0.01) {
-			this.connections = [];
-			for (let i = 0; i < particleArray.length; i++) {
-				var p = particleArray[i];
-				if (p != this) {
-					const distance = euclidian(this, p);
-					if (this.connections.length < number_of_connections) {
-						this.connections.push([distance, p]);
+		
+		this.connections = [];
+		for (let i = 0; i < particleArray.length; i++) {
+			var p = particleArray[i];
+			if (p != this) {
+				const distance = euclidian(this, p);
+				if (this.connections.length < number_of_connections) {
+					this.connections.push([distance, p]);
+					this.connections.sort(compareDistances);
+				} else {
+					if (distance < this.connections[this.connections.length-1][0]) {
+						this.connections[this.connections.length-1] = [distance, p];
 						this.connections.sort(compareDistances);
-					} else {
-						if (distance < this.connections[this.connections.length-1][0]) {
-							this.connections[this.connections.length-1] = [distance, p];
-							this.connections.sort(compareDistances);
-						}
 					}
 				}
 			}
@@ -82,10 +83,17 @@ class Particle {
 
 	// Move circle
 	move() {
-		if (this.x + this.dx < this.radius || this.x + this.dx > canvas.width - this.radius) {
+		if (topdiv.offsetWidth != width_org || topdiv.offsetHeight != height_org) {
+			console.log(width_org, topdiv.offsetWidth);
+			console.log(height_org, topdiv.offsetHeight);
+			width_org = topdiv.offsetWidth;
+			height_org = topdiv.offsetHeight;
+			createParticles();
+		}
+		if (this.x + this.dx < this.radius || this.x + this.dx > width_org - this.radius) {
 			this.dx *= -1;
 		}
-		if (this.y + this.dy < this.radius || this.y + this.dy > canvas.height - this.radius) {
+		if (this.y + this.dy < this.radius || this.y + this.dy > height_org - this.radius) {
 			this.dy *= -1;
 		}
 		this.y += this.dy;
@@ -114,17 +122,18 @@ const createParticles = () => {
 	const seed = 12345;
 	const getRandom = createRandomGenerator(seed);
 
-	const number_of_particles = Math.floor(0.0002 * canvas.width * canvas.height);
+	particleArray = [];
+	const number_of_particles = Math.floor(0.0002 * width_org * height_org);
 	for (let i = 0; i < number_of_particles; i++) {
-		x = Math.floor(getRandom() * canvas.width)
-		y = Math.floor(getRandom() * canvas.height)
+		x = Math.floor(getRandom() * width_org)
+		y = Math.floor(getRandom() * height_org)
 		const particle = new Particle(x, y);
 		particleArray.push(particle);
 	}
 }
 
 const animate = () => {
-	context.clearRect(0, 0, canvas.width, canvas.height);
+	context.clearRect(0, 0, width_org, height_org);
 	particleArray.forEach((particle) => {
 		particle.move();
 		particle.connect();
