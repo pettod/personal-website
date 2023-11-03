@@ -214,7 +214,7 @@
             Here, the local derivative is 1. Therefore, the derivative of the loss with respect to a bias is 1 multiplied by the rest of the chain rule derivatives.
           </p>
           <p class="bd-text">
-            The derivatives of complex activation functions one could just search online and implement to the code. That's what I did.
+            The derivatives of complex activation functions one could just search online and implement into the code. That's what I did.
           </p>
           <p class="bd-text">
             Finally, when the gradients are computed for each parameter, it's time to apply them and update the parameters. The simplest optimizer used to apply the gradients is <em><a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient descent</a></em>. The derivative shows the direction of growth but when training a neural network, we want to minimize the loss hence take a step (<em><a href="https://en.wikipedia.org/wiki/Learning_rate">Learning rate</a></em>) to the direction of a negative gradient. That means, using gradient descent the updated value of a parameter \(p\) will be:
