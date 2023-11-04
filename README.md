@@ -9,10 +9,10 @@ Run server
 python server.py
 ```
 
-Go to [http://localhost:8080/](http://localhost:8080/)
+Go to [http://localhost/](http://localhost/)
 
 ## Update sitemap
 
-1. Go to [https://www.xml-sitemaps.com/](https://www.xml-sitemaps.com/)
-1. Upload sitemap.xml to the project root
-1. If neccessary, update robots.txt and upload to project root. More information [https://developers.google.com/search/docs/crawling-indexing/robots/intro](https://developers.google.com/search/docs/crawling-indexing/robots/intro).
+1. Create sitemap [https://www.xml-sitemaps.com/](https://www.xml-sitemaps.com/)
+1. Upload `sitemap.xml` to the project root
+1. If necessary, update `robots.txt` and `.htaccess` and upload to project root. More information [https://developers.google.com/search/docs/crawling-indexing/robots/intro/](https://developers.google.com/search/docs/crawling-indexing/robots/intro/).
