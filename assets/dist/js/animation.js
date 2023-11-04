@@ -1,147 +1,122 @@
-const canvas = document.getElementById("canvas");
-const topdiv = document.getElementById("topdiv");
-const context = canvas.getContext("2d");
-var width_org = topdiv.offsetWidth;
-var height_org = topdiv.offsetHeight;
-canvas.width = width_org;
-canvas.height = height_org;
+var w, h, loopId, id, canvas, ctx, particles;
 
-var particleArray = [];
-class Particle {
-	constructor(id, x = 0, y = 0) {
-		this.id = id;
-		this.connections = [];
-		this.speed = 0.2;
-		this.radius = 10;
-		this.x = Math.min(Math.max(this.radius, x), width_org - this.radius);
-		this.y = Math.min(Math.max(this.radius, y), height_org - this.radius);
-		this.dx = (Math.random() - 0.5) * this.speed;
-		this.dy = (Math.random() - 0.5) * this.speed;
-	}
-
-	// Draw circle
-	draw() {
-		context.beginPath();
-		context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-		const gradient = context.createRadialGradient(
-			this.x,
-			this.y,
-			1,
-			this.x + 0.5,
-			this.y + 0.5,
-			this.radius
-		);
-		gradient.addColorStop(0.0, "rgba(0, 153, 0, 1.0)");
-		gradient.addColorStop(1.0, "rgba(204, 255, 204, 1.0)");
-		context.fillStyle = gradient;
-		context.fill();
-	}
-
-	// Draw line
-	connect() {
-		context.beginPath();
-		context.strokeStyle = "rgba(204, 255, 204, 1.0)";
-		context.lineWidth = 2;
-
-		const number_of_connections = 2;
-		
-		this.connections = [];
-		for (let i = 0; i < particleArray.length; i++) {
-			var p = particleArray[i];
-			if (p != this) {
-				const distance = euclidian(this, p);
-				if (this.connections.length < number_of_connections) {
-					this.connections.push([distance, p]);
-					this.connections.sort(compareDistances);
-				} else {
-					if (distance < this.connections[this.connections.length-1][0]) {
-						this.connections[this.connections.length-1] = [distance, p];
-						this.connections.sort(compareDistances);
-					}
-				}
-			}
-		}
-
-		// Draw
-		for (let i = 0; i < this.connections.length; i++) {
-			var s = this.connections[i];
-
-			// Draw line from the edge of the circle
-			const dx = this.x - s[1].x;
-			const dy = this.y - s[1].y;
-			const length = Math.sqrt(dx**2 + dy**2);
-			const factor = this.radius / length;
-			var x2 = s[1].x + factor*dx;
-			var y2 = s[1].y + factor*dy;
-
-			// Line
-			context.moveTo(this.x, this.y);
-			context.lineTo(x2, y2);
-			context.stroke();
-		}
-
-	}
-
-	// Move circle
-	move() {
-		if (topdiv.offsetWidth != width_org || topdiv.offsetHeight != height_org) {
-			console.log(width_org, topdiv.offsetWidth);
-			console.log(height_org, topdiv.offsetHeight);
-			width_org = topdiv.offsetWidth;
-			height_org = topdiv.offsetHeight;
-			createParticles();
-		}
-		if (this.x + this.dx < this.radius || this.x + this.dx > width_org - this.radius) {
-			this.dx *= -1;
-		}
-		if (this.y + this.dy < this.radius || this.y + this.dy > height_org - this.radius) {
-			this.dy *= -1;
-		}
-		this.y += this.dy;
-		this.x += this.dx;
-	}
-}
-
-function compareDistances(a, b) {
-	return a[0] > b[0];
-}
-
-const euclidian = (a, b) => {
-	return (a.x - b.x) ** 2 + (a.y - b.y) ** 2;
-}
-
-const createParticles = () => {
-	// Initialize the random generator with a seed
-	function createRandomGenerator(seed) {
-		let state = seed;
-		
-		return function() {
-			state = (state * 9301 + 49297) % 233280;
-			return state / 233280;
-		};
-	}	
-	const seed = 12345;
-	const getRandom = createRandomGenerator(seed);
-
-	particleArray = [];
-	const number_of_particles = Math.floor(0.0002 * width_org * height_org);
-	for (let i = 0; i < number_of_particles; i++) {
-		x = Math.floor(getRandom() * width_org)
-		y = Math.floor(getRandom() * height_org)
-		const particle = new Particle(i, x, y);
-		particleArray.push(particle);
-	}
-}
-
-const animate = () => {
-	context.clearRect(0, 0, width_org, height_org);
-	particleArray.forEach((particle) => {
-		particle.move();
-		particle.connect();
-		particle.draw();
-	});
-	requestAnimationFrame(animate);
+var options = {
+	particleColor: "rgba(230, 255, 230)",
+	lineColor: "rgba(102, 255, 102)",
+	particleAmount: 40,
+	radius: 5,
+	defaultSpeed: 0.2,
+	variantSpeed: 0.1,
+	linkRadius: 100,
 };
 
-createParticles();
-animate();
+var rgb = options.lineColor.match(/\d+/g);
+
+document.addEventListener("DOMContentLoaded", init);
+
+function init() {
+	canvas = document.getElementById("canvas");
+	ctx = canvas.getContext("2d");
+	resizeReset();
+	options.particleAmount = Math.floor(0.0002 * w * h);
+	initialiseElements();
+	startAnimation();
+}
+
+function resizeReset() {
+	w = canvas.width = topdiv.offsetWidth;
+	h = canvas.height = topdiv.offsetHeight;
+}
+
+function initialiseElements() {
+	particles = [];
+	for (var i = 0; i < options.particleAmount; i++) {
+		particles.push(new Particle());
+	}
+}
+
+function startAnimation() {
+	loopId = requestAnimationFrame(animationLoop);
+}
+
+function animationLoop() {
+	ctx.clearRect(0,0,w,h);
+	drawScene();
+	id = requestAnimationFrame(animationLoop);
+}
+
+function drawScene() {
+	drawLine();
+	drawParticle();
+}
+
+function drawParticle() {
+	for (var i = 0; i < particles.length; i++) {
+		particles[i].update();
+		particles[i].draw();
+	}
+}
+
+function drawLine() {
+	for (var i = 0; i < particles.length; i++) {
+		linkPoints(particles[i], particles);
+	}
+}
+
+function linkPoints(point, hubs) {
+	for (var i = 0; i < hubs.length; i++) {
+		var distance = checkDistance(point.x, point.y, hubs[i].x, hubs[i].y);
+		var opacity = 1 - distance / options.linkRadius;
+		if (opacity > 0) {
+			ctx.lineWidth = 1.5;
+			ctx.strokeStyle = 'rgba('+rgb[0]+','+rgb[1]+','+rgb[2]+','+opacity+')';
+			ctx.beginPath();
+			ctx.moveTo(point.x, point.y);
+			ctx.lineTo(hubs[i].x, hubs[i].y);
+			ctx.closePath();
+			ctx.stroke();
+		}
+	}
+}
+
+function checkDistance(x1, y1, x2, y2) {
+	return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+}
+
+Particle = function() {
+	var _this = this;
+
+	_this.x = options.radius + Math.random() * (w - 2*options.radius);
+	_this.y = options.radius + Math.random() * (h - 2*options.radius);
+	_this.color = options.particleColor;
+	_this.radius = options.radius;
+	_this.speed = options.defaultSpeed + Math.random() * options.variantSpeed;
+	_this.directionAngle = Math.floor(Math.random() * 360);
+	_this.vector = {
+		x: Math.cos(_this.directionAngle) * _this.speed,
+		y: Math.sin(_this.directionAngle) * _this.speed
+	}
+
+	_this.update = function() {
+		_this.border();
+		_this.x += _this.vector.x;
+		_this.y += _this.vector.y;
+	}
+
+	_this.border = function() {
+		if (_this.x >= w - options.radius || _this.x <= options.radius) {
+			_this.vector.x *= -1;
+		}
+		if (_this.y >= h - options.radius || _this.y <= options.radius) {
+			_this.vector.y *= -1;
+		}
+	}
+
+	_this.draw = function() {
+		ctx.beginPath();
+		ctx.arc(_this.x, _this.y, _this.radius, 0, Math.PI * 2);
+		ctx.closePath();
+		ctx.fillStyle = _this.color;
+		ctx.fill();
+	}
+}
