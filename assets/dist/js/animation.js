@@ -19,7 +19,7 @@ function init() {
 	ctx = canvas.getContext("2d");
 	resizeReset();
 	options.particleAmount = Math.floor(0.0002 * w * h);
-	initialiseElements();
+	initializeElements();
 	startAnimation();
 }
 
@@ -28,7 +28,7 @@ function resizeReset() {
 	h = canvas.height = topdiv.offsetHeight;
 }
 
-function initialiseElements() {
+function initializeElements() {
 	particles = [];
 	for (var i = 0; i < options.particleAmount; i++) {
 		particles.push(new Particle());
@@ -40,7 +40,7 @@ function startAnimation() {
 }
 
 function animationLoop() {
-	ctx.clearRect(0,0,w,h);
+	ctx.clearRect(0, 0, w, h);
 	drawScene();
 	id = requestAnimationFrame(animationLoop);
 }
