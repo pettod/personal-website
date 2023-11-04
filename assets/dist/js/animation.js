@@ -8,7 +8,8 @@ canvas.height = height_org;
 
 var particleArray = [];
 class Particle {
-	constructor(x = 0, y = 0) {
+	constructor(id, x = 0, y = 0) {
+		this.id = id;
 		this.connections = [];
 		this.speed = 0.2;
 		this.radius = 10;
@@ -127,7 +128,7 @@ const createParticles = () => {
 	for (let i = 0; i < number_of_particles; i++) {
 		x = Math.floor(getRandom() * width_org)
 		y = Math.floor(getRandom() * height_org)
-		const particle = new Particle(x, y);
+		const particle = new Particle(i, x, y);
 		particleArray.push(particle);
 	}
 }
