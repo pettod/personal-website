@@ -3,6 +3,7 @@ var w, h, loopId, id, canvas, ctx, particles;
 var options = {
 	particleColor: "rgba(230, 255, 230)",
 	lineColor: "rgba(102, 255, 102)",
+	lineWidth: 1.5,
 	particleAmount: 40,
 	radius: 5,
 	defaultSpeed: 0.2,
@@ -14,18 +15,40 @@ var rgb = options.lineColor.match(/\d+/g);
 
 document.addEventListener("DOMContentLoaded", init);
 
+//let resizeTimeout;
+//window.addEventListener("resize", () => {
+//  clearTimeout(resizeTimeout);
+//  resizeTimeout = setTimeout(() => {
+//    // Your code to run after a delay, e.g., 250 milliseconds
+//	init();
+//  }, 250);
+//});
+
 function init() {
 	canvas = document.getElementById("canvas");
 	ctx = canvas.getContext("2d");
 	resizeReset();
-	options.particleAmount = Math.floor(0.0002 * w * h);
 	initializeElements();
 	startAnimation();
 }
 
 function resizeReset() {
-	w = canvas.width = topdiv.offsetWidth;
-	h = canvas.height = topdiv.offsetHeight;
+	// Set canvas size and make drawing sharp by scaling with device pixel ratio
+	const scale = window.devicePixelRatio;
+	w = topdiv.offsetWidth;
+	h = topdiv.offsetHeight;
+	canvas.width = w * scale;
+	canvas.height = h * scale;
+	canvas.style.width = `${w}px`;
+	canvas.style.height = `${h}px`;
+	options.particleAmount = Math.floor(0.0002 * w * h);
+	w *= scale;
+	h *= scale;
+	options.lineWidth *= scale;
+	options.radius *= scale;
+	options.defaultSpeed *= scale;
+	options.variantSpeed *= scale;
+	options.linkRadius *= scale;
 }
 
 function initializeElements() {
@@ -68,7 +91,7 @@ function linkPoints(point, hubs) {
 		var distance = checkDistance(point.x, point.y, hubs[i].x, hubs[i].y);
 		var opacity = 1 - distance / options.linkRadius;
 		if (opacity > 0) {
-			ctx.lineWidth = 1.5;
+			ctx.lineWidth = options.lineWidth;
 			ctx.strokeStyle = 'rgba('+rgb[0]+','+rgb[1]+','+rgb[2]+','+opacity+')';
 			ctx.beginPath();
 			ctx.moveTo(point.x, point.y);
