@@ -132,7 +132,16 @@
         <div class="collapse" id="collapse-backpropagation">
           <h4>Introduction</h4>
           <p class="bd-text">
-            A machine learning model includes model trainable parameters ‒ weights and biases ‒ activation functions, and skip connections. The feed forward process of applying a ML model to inputs is called <em>Forward propagation</em>. Training a ML model requires a learning phase to update the weights and biases. This learning phase is called <em><a href="https://en.wikipedia.org/wiki/Backpropagation">Backpropagation</a></em>.
+            A machine learning model includes model trainable parameters ‒ weights and biases ‒ activation functions, and skip connections. The feed forward process of applying a ML model to inputs is called <em>Forward propagation</em>. The forward propagation in a single neuron is expressed as
+          </p>
+          <p class="bd-text" style="text-align: center;">
+            \[o = a(w \cdot i + b)\]
+          </p>
+          <p class="bd-text">
+            where \(o\) is the output, \(a\) is an activation function, \(w\) is a weight, \(i\) is an input, and \(b\) is a bias.
+          </p>
+          <p class="bd-text">
+            Training a ML model requires a learning phase to update the weights and biases. This learning phase is called <em><a href="https://en.wikipedia.org/wiki/Backpropagation">Backpropagation</a></em>.
           </p>
           <h4>Implementation</h4>
           <p class="bd-text" style="margin-bottom: 0px;">
