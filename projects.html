@@ -173,6 +173,10 @@
               <li>Gradient descent</li>
             </ul>
           </ul>
+          <img class="img-border" width="100%" src="https://github.com/pettod/backpropagation/assets/33998401/622219bd-f0d4-4485-acf7-1f11157d614e">
+          <p class="img-text">
+            The code is scalable. It trains and draws any size of a network.
+          </p>  
           <h4>Theory</h4>
           <p class="bd-text">
             The main principle behind backpropagation is <em><a href="https://en.wikipedia.org/wiki/Derivative">Derivative</a></em>. To define how to update the neural network during an iteration, one needs to compute a gradient for each parameter. The gradient determines how much a parameter affects the loss, e.g. a parameter with a gradient 0 contributes nothing to the loss. The gradient of a parameter \(g_{p}\) is defined by the derivative of the loss \(l\) with respect to the parameter \(p\):
@@ -274,7 +278,7 @@
           </ol>
           <p class="bd-text">
             The challenge lied in how multi-step the classification had to be.
-            Before being able to classify the video, had to create a face detection algorithm.
+            Before being able to classify the video, a face detection algorithm needed to be created.
             There was a time limit so the face detection had to be fast but also accurate and not every model was able to meet these requirements.
             Also, in some of the videos there were multiple people present.
             Obviously, you cannot mess the different faces because that would easily lead to a fake prediction.
