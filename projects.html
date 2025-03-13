@@ -184,11 +184,27 @@
         <h2 class="display-6">Acoustic occupancy sensor</h2>
         <img class="img-border" width="100%" src="assets/rauha_flow_chart.png">
         <p class="img-text">
-          Image text
+          Architecture of our ultrasonic occupancy sensor.
+          The sensor is based on a microphone and filters out speech frequencies to preserve privacy.
         </p>
         <div class="collapse" id="collapse-rauha">
           <p class="bd-text">
-            Text
+            Occupancy sensor market has couple problems:
+            <ul class="bd-text" style="text-align: left;">
+              <li>Cheap sensors (PIR, CO2, Desk counter) are not accurate</li>
+              <li>Expensive sensors (Thermal, Depth, Lidar) are accurate but have field-of-view limitation and require installation and wirings</li>
+              <li>RGB, Wi-FI, Bluetooth are not privacy preserving not accurate</li>
+              <li>Battery life is a problem in many cheaper options</li>
+            </ul>
+          </p>
+          <p class="bd-text">
+            Our solution was to make plug-and-play ultrasonic sensor which is privacy preserving, have no battery life nor field-of-view problems, and is accurate.
+            Our sensor based on acoustic is privacy preserved because it filters out speech frequencies.
+            The device is easy to install because it can be plugged into any socket in the room as it has 360 degree field-of-view.
+            Finally, it is maintenance free because it is constantly powered by the wall socket.
+            <br>
+            <br>
+            The challenge in this project was to make the algorithm accurate because the people count, for example in a library, can be the same as in a kitchen while the acoustic signals are very different.
           </p>
           <p class="ref-text">
             2024 | <a href="https://github.com/pettod/occupancy-estimation">Github 1</a><br>
