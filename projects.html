@@ -17,6 +17,7 @@
       .img-border {
         border-radius: 20px;
         margin-bottom: 15px;
+        cursor: pointer; /* Change cursor to pointer for images/videos */
       }
 
       .aspect-ratio-keeper {
@@ -37,12 +38,44 @@
         text-decoration: none;
       }
 
-      /*
-      div.background {
-        background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('assets/alps_small.jpg');
-        background-size: cover;
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1000; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
       }
-      */
+
+      .modal-content {
+        display: block;
+        max-height: 80%;
+        max-width: 80%;
+        object-fit: contain;
+        width: auto; /* Maintain aspect ratio */
+        height: auto; /* Maintain aspect ratio */
+        margin: auto; /* Remove auto margin since we're using flexbox */
+      }
+
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
 
       .bd-text {
         font-size: 18px;
@@ -125,7 +158,7 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">AI companion</h2>
-        <video class="img-border" width="100%" autoplay loop muted src="https://github.com/user-attachments/assets/807f06ba-5ba8-43bf-b995-f392e4a88d4c"></video>
+        <video class="img-border" width="100%" autoplay loop muted src="https://github.com/user-attachments/assets/807f06ba-5ba8-43bf-b995-f392e4a88d4c" onclick="openModal(this.src, 'video')"></video>
         <p class="img-text">
           Talk with a voice clone of your loved one.
           The AI is personalised to have knowledge of your background.
@@ -136,7 +169,7 @@
             Giving them an option to talk with AI can reduce the cognitive decline.
             Having voice clone of their loved ones was a requested feature especially when they didn't feel safe at home.
           </p>
-          <img class="img-border" width="100%" src="assets/voice_architechture.png">
+          <img class="img-border" width="100%" src="assets/voice_architechture.png" onclick="openModal(this.src, 'image')">
           <p class="img-text">
             Architecture of the voice clone.
             Phone calling and web app were created for easy access.
@@ -151,7 +184,7 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Microscopy image analysis</h2>
-        <video class="img-border" width="100%" autoplay loop muted src="https://github.com/user-attachments/assets/19562dab-f550-4f52-bb0f-8f4f2009ca8e"></video>
+        <video class="img-border" width="100%" autoplay loop muted src="https://github.com/user-attachments/assets/19562dab-f550-4f52-bb0f-8f4f2009ca8e" onclick="openModal(this.src, 'video')"></video>
         <p class="img-text">
           Analyse microscopy images using natural language.
           Segment cells and nuclei and measure their area.
@@ -165,7 +198,7 @@
             However, we found out that people wouldn't pay for such software, they want a full package which is in the vision below.
             Also, they spent far less hours a year on image analysis than what was our hypothesis.
           </p>
-          <img class="img-border" width="100%" src="assets/research_loop.png">
+          <img class="img-border" width="100%" src="assets/research_loop.png" onclick="openModal(this.src, 'image')">
           <p class="img-text">Research loop of drug discovery.</p>
           <p class="bd-text">
             The vision was to make an "AI Scientist" to automate drug discovery including all the steps mentioned in the image above.
@@ -182,7 +215,7 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Acoustic occupancy sensor</h2>
-        <img class="img-border" width="100%" src="assets/rauha_flow_chart.png">
+        <img class="img-border" width="100%" src="assets/rauha_flow_chart.png" onclick="openModal(this.src, 'image')">
         <p class="img-text">
           Architecture of our ultrasonic occupancy sensor.
           The sensor is based on a microphone and filters out speech frequencies to preserve privacy.
@@ -223,7 +256,7 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Tone mapping</h2>
-        <img class="img-border" width="100%" src="assets/tgtm.jpg">
+        <img class="img-border" width="100%" src="assets/tgtm.jpg" onclick="openModal(this.src, 'image')">
         <p class="img-text">
           Publication of efficient tone curve parameters estimation on embedded pixel processing pipelines.
         </p>
@@ -255,7 +288,7 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Backpropagation</h2>
-        <img class="img-border" width="100%" src="https://user-images.githubusercontent.com/33998401/274561674-b0de8b2e-3e7a-4538-befc-aec0873632de.gif">
+        <img class="img-border" width="100%" src="https://user-images.githubusercontent.com/33998401/274561674-b0de8b2e-3e7a-4538-befc-aec0873632de.gif" onclick="openModal(this.src, 'image')">
         <p class="img-text">
           Learning process of a single neuron. Included components: 2 weights, bias, ReLU, mean squared error, and gradient descent.
         </p>
@@ -303,7 +336,7 @@
               <li>Gradient descent</li>
             </ul>
           </ul>
-          <img class="img-border" width="100%" src="https://github.com/pettod/backpropagation/assets/33998401/622219bd-f0d4-4485-acf7-1f11157d614e">
+          <img class="img-border" width="100%" src="https://github.com/pettod/backpropagation/assets/33998401/622219bd-f0d4-4485-acf7-1f11157d614e" onclick="openModal(this.src, 'image')">
           <p class="img-text">
             The code is scalable. It trains and draws any size of a network.
           </p>  
@@ -386,7 +419,7 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Deepfake detection</h2>
-        <img class="img-border" width="100%" src="https://github.com/pettod/deepfake-recognition-kaggle/assets/33998401/f15c348e-7b6c-40af-8f16-48699016f3cd">
+        <img class="img-border" width="100%" src="https://github.com/pettod/deepfake-recognition-kaggle/assets/33998401/f15c348e-7b6c-40af-8f16-48699016f3cd" onclick="openModal(this.src, 'image')">
         <p class="img-text">
           Real-time deepfake face detection and classification. See the moving ghost between the faces causing fake classification.*
         </p>
@@ -433,7 +466,7 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Package delivery optimization</h2>
-        <img class="img-border" width="100%" src="https://github.com/pettod/delivery-routing/assets/33998401/8bda2271-aa07-48fe-8a4d-fd0f64ebcc97">
+        <img class="img-border" width="100%" src="https://github.com/pettod/delivery-routing/assets/33998401/8bda2271-aa07-48fe-8a4d-fd0f64ebcc97" onclick="openModal(this.src, 'image')">
         <p class="img-text">
           Finding optimal route with 301 locations and 4 delivery vehicles.
         </p>
@@ -473,7 +506,7 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Prostate cancer grade assessment</h2>
-        <img class="img-border" width="100%" src="https://github.com/pettod/personal-website/assets/33998401/ac116f86-61a6-4a3a-934e-5fd22da48c1a">
+        <img class="img-border" width="100%" src="https://github.com/pettod/personal-website/assets/33998401/ac116f86-61a6-4a3a-934e-5fd22da48c1a" onclick="openModal(this.src, 'image')">
         <p class="img-text">
           Input of 4x4 concatenated blocks of tissue area with respective predicted and ground truth Gleason segmentation.*
         </p>
@@ -502,7 +535,7 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Motion prediction for autonomous vehicles</h2>
-        <img class="img-border" width="100%" src="https://github.com/pettod/personal-website/assets/33998401/d2cbc66a-544d-48ff-9a47-cd885208982e">
+        <img class="img-border" width="100%" src="https://github.com/pettod/personal-website/assets/33998401/d2cbc66a-544d-48ff-9a47-cd885208982e" onclick="openModal(this.src, 'image')">
         <p class="img-text">
           2D view of roads, traffic agents, and their trajectories.*
         </p>
@@ -530,7 +563,7 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Molecular translation</h2>
-        <img class="img-border" width="100%" src="https://github.com/pettod/bms-molecular-translation/assets/33998401/7d1d3d97-3660-4169-ae1d-75bbb0c1a828">
+        <img class="img-border" width="100%" src="https://github.com/pettod/bms-molecular-translation/assets/33998401/7d1d3d97-3660-4169-ae1d-75bbb0c1a828" onclick="openModal(this.src, 'image')">
         <p class="img-text">
           Drawn Skeletal formula of an input molecule and a corresponding ground truth InChI text.*
         </p>
@@ -556,7 +589,7 @@
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Charuco corner detection</h2>
-        <img class="img-border" width="100%" src="https://github.com/pettod/charuco-corner-detection/raw/master/document_images/detected_charuco_markers.gif">
+        <img class="img-border" width="100%" src="https://github.com/pettod/charuco-corner-detection/raw/master/document_images/detected_charuco_markers.gif" onclick="openModal(this.src, 'image')">
         <p class="img-text">
           Real-time Charuco corner detection. All of the captured pictures (even without seeing or detecting every corner) can be used for camera calibration because every corner has an ID.
         </p>
@@ -654,7 +687,14 @@
       </div>
     </div>
   </div>
-  
+
+  <!-- Modal for images and videos -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
+    <video class="modal-content" id="video01" controls></video>
+  </div>
+
 </main>
 
 <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
@@ -668,7 +708,56 @@
     } else {
       button_text.innerHTML = "Read less &uarr;";
     }
-  } 
+  }
+
+  function isMobile() {
+    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+
+  function openModal(src, type) {
+    if (isMobile()) {
+      return;
+    }
+
+    var modal = document.getElementById("myModal");
+    var img = document.getElementById("img01");
+    var video = document.getElementById("video01");
+    
+    if (type === 'image') {
+      img.src = src;
+      img.style.display = "block";
+      video.style.display = "none";
+    } else if (type === 'video') {
+      video.src = src;
+      video.style.display = "block";
+      img.style.display = "none";
+    }
+    
+    modal.style.display = "block";
+    
+    // Center content vertically
+    modal.style.display = "flex";
+    modal.style.alignItems = "center";
+    modal.style.justifyContent = "center";
+    
+    // Add event listener to close modal when clicking outside
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  }
+
+  function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+    var img = document.getElementById("img01");
+    var video = document.getElementById("video01");
+    img.src = "";
+    video.src = "";
+    // Remove the window click event listener
+    window.onclick = null;
+  }
 </script>
 <script src="assets/dist/js/animation.js"></script>
   </body>
