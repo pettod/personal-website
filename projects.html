@@ -746,6 +746,13 @@
         closeModal();
       }
     }
+    
+    // Add event listener for ESC key to close modal
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    });
   }
 
   function closeModal() {
