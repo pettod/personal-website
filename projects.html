@@ -157,6 +157,35 @@
   <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
+        <h2 class="display-6">Masquerade MCP</h2>
+        <video class="img-border" width="100%" autoplay loop muted src="https://private-user-images.githubusercontent.com/33998401/457614446-80b1d8ac-a012-41ce-8e92-64d567f2427f.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTA4MDQ4NTUsIm5iZiI6MTc1MDgwNDU1NSwicGF0aCI6Ii8zMzk5ODQwMS80NTc2MTQ0NDYtODBiMWQ4YWMtYTAxMi00MWNlLThlOTItNjRkNTY3ZjI0MjdmLm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA2MjQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNjI0VDIyMzU1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWViMDA0MWJmODYzMDFiMGQzZDBkYmFiNjc4MmE1YjY3ZjFlMTI5MzFlMGZiMTY0MmNiMjFhMjhmMGZhODI1Y2UmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.GfO_0PAFNobykR8ySs4bznTAVHwB761ynhmyLkQjctc" onclick="openModal(this.src, 'video')"></video>
+        <p class="img-text">
+          Redact sensitive data from PDF files before sending them to an LLM.
+        </p>
+        <div class="collapse" id="collapse-masquerade">
+          <p class="bd-text">
+            <b>Problem:</b> Tools like Claude or GPT are incredibly powerful, but they require raw input. If you're dealing with contracts, medical records, or internal documents, that's risky.
+            <b>Solution:</b> Masquerade acts as a privacy firewall for your files. Just paste in the file path to a PDF, and Masquerade will:
+            <ul class="bd-text" style="text-align: left;">
+              <li>Automatically detect sensitive data (names, emails, dates, entities)</li>
+              <li>Redact the sensitive data</li>
+              <li>Let you preview before sending to an LLM</li>
+            </ul>
+          </p>
+          <img class="img-border" width="100%" src="https://github.com/user-attachments/assets/96002c8b-5839-4499-814e-e603d95e7c82" onclick="openModal(this.src, 'image')">
+          <p class="img-text">
+            Architecture of the MCP.
+            Powered by Tinfoil API (YC X25) for secure processing.
+          </p>
+          <p class="ref-text">
+            2025 | <a href="https://github.com/postralai/masquerade">Github</a>
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-masquerade" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-masquerade" aria-expanded="false" aria-controls="collapse-masquerade">Read more &darr;</button></p>
+      </div>
+    </div>
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
         <h2 class="display-6">AI companion</h2>
         <video class="img-border" width="100%" autoplay loop muted src="https://github.com/user-attachments/assets/807f06ba-5ba8-43bf-b995-f392e4a88d4c" onclick="openModal(this.src, 'video')"></video>
         <p class="img-text">
@@ -212,6 +241,10 @@
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-ai-scientist" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-microscopy" aria-expanded="false" aria-controls="collapse-microscopy">Read more &darr;</button></p>
       </div>
     </div>
+  </div>
+
+  <!-- The second 3 projects -->
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Acoustic occupancy sensor</h2>
@@ -249,10 +282,6 @@
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-rauha" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-rauha" aria-expanded="false" aria-controls="collapse-deepfake">Read more &darr;</button></p>
       </div>
     </div>
-  </div>
-
-  <!-- The first 3 projects -->
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Tone mapping</h2>
@@ -416,6 +445,10 @@
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-backpropagation" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-backpropagation" aria-expanded="false" aria-controls="collapse-backpropagation">Read more &darr;</button></p>
       </div>
     </div>
+  </div>
+
+  <!-- The third 3 projects -->
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Deepfake detection</h2>
@@ -459,10 +492,6 @@
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-deepfake" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-deepfake" aria-expanded="false" aria-controls="collapse-deepfake">Read more &darr;</button></p>
       </div>
     </div>
-  </div>
-
-  <!-- The second 3 projects -->
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Package delivery optimization</h2>
@@ -532,6 +561,10 @@
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-cancer" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cancer" aria-expanded="false" aria-controls="collapse-cancer">Read more &darr;</button></p>
       </div>
     </div>
+  </div>
+
+  <!-- The fourth 3 projects -->
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Motion prediction for autonomous vehicles</h2>
@@ -556,10 +589,6 @@
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-lyft" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-lyft" aria-expanded="false" aria-controls="collapse-lyft">Read more &darr;</button></p>
       </div>
     </div>
-  </div>
-
-  <!-- The third 3 projects -->
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Molecular translation</h2>
@@ -611,7 +640,7 @@
     </div>
   </div>
 
-  <!-- The fourth 3 projects -->
+  <!-- The fifth 3 projects -->
   <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
       <div class="my-3 py-3">
