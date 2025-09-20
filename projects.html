@@ -157,165 +157,6 @@
   <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
-        <h2 class="display-6">PDF sensitive data redaction MCP</h2>
-        <video class="img-border" width="100%" autoplay loop muted src="https://d2c5tif9s6pex6.cloudfront.net/o5542w%2Ffile%2Fffba86f29953c286025ff586c5553398_8a775b144b17fe55c30ace49d1e59869.mp4?response-content-disposition=inline%3Bfilename%3D%22ffba86f29953c286025ff586c5553398_8a775b144b17fe55c30ace49d1e59869.mp4%22%3B&response-content-type=&Expires=1758395859&Signature=c-2IfJsDLGqhRJvC0XXjNxPGyYf9J9ZPyPnflPSPL1PuexaKCKQ8LXk-WxVlCvVFsaIyzvISvjsiSfTO0DNU2iPcjTZnQlwp7nktVQLs9dRYsA-OxqZnOjz~mP4BlDKnMC0c5apg4ZQjvkbAQ2j-hb1LsCLi40E9rip11J0tQ62eqW4E7P-ppRQroIf~CsYfqSGCl7tCxBsTjpVN5q5bchS7-YHYViTicqHHAuEWfI2J37jvrMdR8VSsCpHQUFkqooz7y7cRDeyhSLUdh23asIAHG6lwcncmPqLSH6PxozyhL2Ol6nhJfkUjACVB9CiWMlbHbNpbtB4k3R22UsysuQ__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ" onclick="openModal(this.src, 'video')"></video>
-        <p class="img-text">
-          Redact sensitive data from PDF files before sending them to an LLM.
-        </p>
-        <div class="collapse" id="collapse-masquerade">
-          <p class="bd-text">
-            <b>Problem:</b> Tools like Claude or GPT are incredibly powerful, but they require raw input. If you're dealing with contracts, medical records, or internal documents, that's risky.
-            <b>Solution:</b> Masquerade acts as a privacy firewall for your files. Just paste in the file path to a PDF, and Masquerade will:
-            <ul class="bd-text" style="text-align: left;">
-              <li>Automatically detect sensitive data (names, emails, dates, entities)</li>
-              <li>Redact the sensitive data</li>
-              <li>Let you preview before sending to an LLM</li>
-            </ul>
-          </p>
-          <img class="img-border" width="100%" src="https://github.com/user-attachments/assets/96002c8b-5839-4499-814e-e603d95e7c82" onclick="openModal(this.src, 'image')">
-          <p class="img-text">
-            Architecture of the MCP.
-            Powered by Tinfoil API (YC X25) for secure processing.
-          </p>
-          <p class="ref-text">
-            2025 | <a href="https://github.com/pettod/masquerade">Github</a>
-          </p>
-        </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-masquerade" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-masquerade" aria-expanded="false" aria-controls="collapse-masquerade">Read more &darr;</button></p>
-      </div>
-    </div>
-    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-6">AI companion</h2>
-        <video class="img-border" width="100%" autoplay loop muted src="https://github.com/user-attachments/assets/807f06ba-5ba8-43bf-b995-f392e4a88d4c" onclick="openModal(this.src, 'video')"></video>
-        <p class="img-text">
-          Talk with a voice clone of your loved one.
-          The AI is personalised to have knowledge of your background.
-        </p>
-        <div class="collapse" id="collapse-otherly">
-          <p class="bd-text">
-            Elderly people are often lonely and in a risk of getting memory diseases such as Alzheimer's and dementia.
-            Giving them an option to talk with AI can reduce the cognitive decline.
-            Having voice clone of their loved ones was a requested feature especially when they didn't feel safe at home.
-          </p>
-          <img class="img-border" width="100%" src="assets/voice_architechture.png" onclick="openModal(this.src, 'image')">
-          <p class="img-text">
-            Architecture of the voice clone.
-            Phone calling and web app were created for easy access.
-          </p>
-          <p class="ref-text">
-            2025 | <a href="https://github.com/pettod/ai-companion">Github</a>
-          </p>
-        </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-otherly" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-otherly" aria-expanded="false" aria-controls="collapse-otherly">Read more &darr;</button></p>
-      </div>
-    </div>
-    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-6">Microscopy image analysis</h2>
-        <video class="img-border" width="100%" autoplay loop muted src="https://github.com/user-attachments/assets/19562dab-f550-4f52-bb0f-8f4f2009ca8e" onclick="openModal(this.src, 'video')"></video>
-        <p class="img-text">
-          Analyse microscopy images using natural language.
-          Segment cells and nuclei and measure their area.
-        </p>
-        <div class="collapse" id="collapse-microscopy">
-          <p class="bd-text">
-            Image analysis in drug discovery is typically done manually using ImageJ.
-            Machine Learning tools are sometimes used.
-            However, research scientists are not trained engineers to install or re-train ML models.
-            In this project, the aim was to give research scientists access to ML model via natural language.
-            However, we found out that people wouldn't pay for such software, they want a full package which is in the vision below.
-            Also, they spent far less hours a year on image analysis than what was our hypothesis.
-          </p>
-          <img class="img-border" width="100%" src="assets/research_loop.png" onclick="openModal(this.src, 'image')">
-          <p class="img-text">Research loop of drug discovery.</p>
-          <p class="bd-text">
-            The vision was to make an "AI Scientist" to automate drug discovery including all the steps mentioned in the image above.
-          </p>
-          <p class="ref-text">
-            2025 | <a href="https://todorov.fi/products/microscopy">Project page</a>
-            <br>
-            2025 | <a href="https://github.com/pettod/medical-image-enhancement/">Github</a>
-          </p>
-        </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-ai-scientist" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-microscopy" aria-expanded="false" aria-controls="collapse-microscopy">Read more &darr;</button></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- The second 3 projects -->
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-6">Acoustic occupancy sensor</h2>
-        <img class="img-border" width="100%" src="assets/rauha_flow_chart.png" onclick="openModal(this.src, 'image')">
-        <p class="img-text">
-          Architecture of our ultrasonic occupancy sensor.
-          The sensor is based on a microphone and filters out speech frequencies to preserve privacy.
-        </p>
-        <div class="collapse" id="collapse-rauha">
-          <p class="bd-text">
-            Occupancy sensor market has couple problems:
-            <ul class="bd-text" style="text-align: left;">
-              <li>Cheap sensors (PIR, CO2, Desk counter) are not accurate</li>
-              <li>Expensive sensors (Thermal, Depth, Lidar) are accurate but have field-of-view limitation and require installation and wirings</li>
-              <li>RGB, Wi-FI, Bluetooth are not privacy preserving not accurate</li>
-              <li>Battery life is a problem in many cheaper options</li>
-            </ul>
-          </p>
-          <p class="bd-text">
-            Our solution was to make plug-and-play ultrasonic sensor which is privacy preserving, have no battery life nor field-of-view problems, and is accurate.
-            Our sensor based on acoustic is privacy preserved because it filters out speech frequencies.
-            The device is easy to install because it can be plugged into any socket in the room as it has 360 degree field-of-view.
-            Finally, it is maintenance free because it is constantly powered by the wall socket.
-            <br>
-            <br>
-            The challenge in this project was to make the algorithm accurate because the people count, for example in a library, can be the same as in a kitchen while the acoustic signals are very different.
-          </p>
-          <p class="ref-text">
-            2024 | <a href="https://github.com/pettod/occupancy-estimation">Github 1</a><br>
-            2024 | <a href="https://github.com/pettod/microphone-occupancy">Github 2</a><br>
-            2024 | <a href="https://github.com/pettod/rauha-website">Github 3</a><br>
-            2024 | <a href="https://todorov.fi/products/rauha/dashboard">Dashboard</a>
-          </p>
-        </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-rauha" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-rauha" aria-expanded="false" aria-controls="collapse-deepfake">Read more &darr;</button></p>
-      </div>
-    </div>
-    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-6">Tone mapping</h2>
-        <img class="img-border" width="100%" src="assets/tgtm.jpg" onclick="openModal(this.src, 'image')">
-        <p class="img-text">
-          Publication of efficient tone curve parameters estimation on embedded pixel processing pipelines.
-        </p>
-        <div class="collapse" id="collapse-tgtm">
-          <p class="bd-text">
-            Machine learning-based HDR sensor image tone mapping designed to run efficiently on ISPs.
-            The work includes 8-bit SDR to 26-bit HDR dataset simulation, image data compression into image histograms, and a fully automated tone curve function parameters prediction.
-            The approach is generic and could be applied on solutions with a predefined analytic function.
-          </p>
-          <p class="bd-text" style="margin-bottom: 0px;">
-            The work in numbers:
-          </p>
-          <ul class="bd-text" style="text-align: left;">
-            <li>26-bit HDR sensor</li>
-            <li>150 dB dynamic range</li>
-            <li>1k neural network parameters</li>
-            <li>9 kFLOPS curve estimation</li>
-            <li>53 &#956;s runtime on Raspberry Pi 4</li>
-            <li>99.98 % fewer FLOPS than in <a href="https://www.mdpi.com/1424-8220/23/12/5767">DI-TM</a></li>
-            <li>5.85 dB higher PSNR than in DI-TM on real HDR camera images</li>
-          </ul>
-          <p class="ref-text">
-            2024 | <a href="https://arxiv.org/abs/2405.05016">arXiv</a>
-          </p>
-        </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-tgtm" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-tgtm" aria-expanded="false" aria-controls="collapse-tgtm">Read more &darr;</button></p>
-      </div>
-    </div>
-    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
         <h2 class="display-6">Backpropagation</h2>
         <img class="img-border" width="100%" src="https://user-images.githubusercontent.com/33998401/274561674-b0de8b2e-3e7a-4538-befc-aec0873632de.gif" onclick="openModal(this.src, 'image')">
         <p class="img-text">
@@ -443,6 +284,165 @@
           </p>
         </div>
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-backpropagation" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-backpropagation" aria-expanded="false" aria-controls="collapse-backpropagation">Read more &darr;</button></p>
+      </div>
+    </div>
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-6">PDF sensitive data redaction MCP</h2>
+        <video class="img-border" width="100%" autoplay loop muted src="https://d2c5tif9s6pex6.cloudfront.net/o5542w%2Ffile%2Fffba86f29953c286025ff586c5553398_8a775b144b17fe55c30ace49d1e59869.mp4?response-content-disposition=inline%3Bfilename%3D%22ffba86f29953c286025ff586c5553398_8a775b144b17fe55c30ace49d1e59869.mp4%22%3B&response-content-type=&Expires=1758395859&Signature=c-2IfJsDLGqhRJvC0XXjNxPGyYf9J9ZPyPnflPSPL1PuexaKCKQ8LXk-WxVlCvVFsaIyzvISvjsiSfTO0DNU2iPcjTZnQlwp7nktVQLs9dRYsA-OxqZnOjz~mP4BlDKnMC0c5apg4ZQjvkbAQ2j-hb1LsCLi40E9rip11J0tQ62eqW4E7P-ppRQroIf~CsYfqSGCl7tCxBsTjpVN5q5bchS7-YHYViTicqHHAuEWfI2J37jvrMdR8VSsCpHQUFkqooz7y7cRDeyhSLUdh23asIAHG6lwcncmPqLSH6PxozyhL2Ol6nhJfkUjACVB9CiWMlbHbNpbtB4k3R22UsysuQ__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ" onclick="openModal(this.src, 'video')"></video>
+        <p class="img-text">
+          Redact sensitive data from PDF files before sending them to an LLM.
+        </p>
+        <div class="collapse" id="collapse-masquerade">
+          <p class="bd-text">
+            <b>Problem:</b> Tools like Claude or GPT are incredibly powerful, but they require raw input. If you're dealing with contracts, medical records, or internal documents, that's risky.
+            <b>Solution:</b> Masquerade acts as a privacy firewall for your files. Just paste in the file path to a PDF, and Masquerade will:
+            <ul class="bd-text" style="text-align: left;">
+              <li>Automatically detect sensitive data (names, emails, dates, entities)</li>
+              <li>Redact the sensitive data</li>
+              <li>Let you preview before sending to an LLM</li>
+            </ul>
+          </p>
+          <img class="img-border" width="100%" src="https://github.com/user-attachments/assets/96002c8b-5839-4499-814e-e603d95e7c82" onclick="openModal(this.src, 'image')">
+          <p class="img-text">
+            Architecture of the MCP.
+            Powered by Tinfoil API (YC X25) for secure processing.
+          </p>
+          <p class="ref-text">
+            2025 | <a href="https://github.com/pettod/masquerade">Github</a>
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-masquerade" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-masquerade" aria-expanded="false" aria-controls="collapse-masquerade">Read more &darr;</button></p>
+      </div>
+    </div>
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-6">AI companion</h2>
+        <video class="img-border" width="100%" autoplay loop muted src="https://github.com/user-attachments/assets/807f06ba-5ba8-43bf-b995-f392e4a88d4c" onclick="openModal(this.src, 'video')"></video>
+        <p class="img-text">
+          Talk with a voice clone of your loved one.
+          The AI is personalised to have knowledge of your background.
+        </p>
+        <div class="collapse" id="collapse-otherly">
+          <p class="bd-text">
+            Elderly people are often lonely and in a risk of getting memory diseases such as Alzheimer's and dementia.
+            Giving them an option to talk with AI can reduce the cognitive decline.
+            Having voice clone of their loved ones was a requested feature especially when they didn't feel safe at home.
+          </p>
+          <img class="img-border" width="100%" src="assets/voice_architechture.png" onclick="openModal(this.src, 'image')">
+          <p class="img-text">
+            Architecture of the voice clone.
+            Phone calling and web app were created for easy access.
+          </p>
+          <p class="ref-text">
+            2025 | <a href="https://github.com/pettod/ai-companion">Github</a>
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-otherly" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-otherly" aria-expanded="false" aria-controls="collapse-otherly">Read more &darr;</button></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- The second 3 projects -->
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-6">Microscopy image analysis</h2>
+        <video class="img-border" width="100%" autoplay loop muted src="https://github.com/user-attachments/assets/19562dab-f550-4f52-bb0f-8f4f2009ca8e" onclick="openModal(this.src, 'video')"></video>
+        <p class="img-text">
+          Analyse microscopy images using natural language.
+          Segment cells and nuclei and measure their area.
+        </p>
+        <div class="collapse" id="collapse-microscopy">
+          <p class="bd-text">
+            Image analysis in drug discovery is typically done manually using ImageJ.
+            Machine Learning tools are sometimes used.
+            However, research scientists are not trained engineers to install or re-train ML models.
+            In this project, the aim was to give research scientists access to ML model via natural language.
+            However, we found out that people wouldn't pay for such software, they want a full package which is in the vision below.
+            Also, they spent far less hours a year on image analysis than what was our hypothesis.
+          </p>
+          <img class="img-border" width="100%" src="assets/research_loop.png" onclick="openModal(this.src, 'image')">
+          <p class="img-text">Research loop of drug discovery.</p>
+          <p class="bd-text">
+            The vision was to make an "AI Scientist" to automate drug discovery including all the steps mentioned in the image above.
+          </p>
+          <p class="ref-text">
+            2025 | <a href="https://todorov.fi/products/microscopy">Project page</a>
+            <br>
+            2025 | <a href="https://github.com/pettod/medical-image-enhancement/">Github</a>
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-ai-scientist" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-microscopy" aria-expanded="false" aria-controls="collapse-microscopy">Read more &darr;</button></p>
+      </div>
+    </div>
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-6">Acoustic occupancy sensor</h2>
+        <img class="img-border" width="100%" src="assets/rauha_flow_chart.png" onclick="openModal(this.src, 'image')">
+        <p class="img-text">
+          Architecture of our ultrasonic occupancy sensor.
+          The sensor is based on a microphone and filters out speech frequencies to preserve privacy.
+        </p>
+        <div class="collapse" id="collapse-rauha">
+          <p class="bd-text">
+            Occupancy sensor market has couple problems:
+            <ul class="bd-text" style="text-align: left;">
+              <li>Cheap sensors (PIR, CO2, Desk counter) are not accurate</li>
+              <li>Expensive sensors (Thermal, Depth, Lidar) are accurate but have field-of-view limitation and require installation and wirings</li>
+              <li>RGB, Wi-FI, Bluetooth are not privacy preserving not accurate</li>
+              <li>Battery life is a problem in many cheaper options</li>
+            </ul>
+          </p>
+          <p class="bd-text">
+            Our solution was to make plug-and-play ultrasonic sensor which is privacy preserving, have no battery life nor field-of-view problems, and is accurate.
+            Our sensor based on acoustic is privacy preserved because it filters out speech frequencies.
+            The device is easy to install because it can be plugged into any socket in the room as it has 360 degree field-of-view.
+            Finally, it is maintenance free because it is constantly powered by the wall socket.
+            <br>
+            <br>
+            The challenge in this project was to make the algorithm accurate because the people count, for example in a library, can be the same as in a kitchen while the acoustic signals are very different.
+          </p>
+          <p class="ref-text">
+            2024 | <a href="https://github.com/pettod/occupancy-estimation">Github 1</a><br>
+            2024 | <a href="https://github.com/pettod/microphone-occupancy">Github 2</a><br>
+            2024 | <a href="https://github.com/pettod/rauha-website">Github 3</a><br>
+            2024 | <a href="https://todorov.fi/products/rauha/dashboard">Dashboard</a>
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-rauha" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-rauha" aria-expanded="false" aria-controls="collapse-deepfake">Read more &darr;</button></p>
+      </div>
+    </div>
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-6">Tone mapping</h2>
+        <img class="img-border" width="100%" src="assets/tgtm.jpg" onclick="openModal(this.src, 'image')">
+        <p class="img-text">
+          Publication of efficient tone curve parameters estimation on embedded pixel processing pipelines.
+        </p>
+        <div class="collapse" id="collapse-tgtm">
+          <p class="bd-text">
+            Machine learning-based HDR sensor image tone mapping designed to run efficiently on ISPs.
+            The work includes 8-bit SDR to 26-bit HDR dataset simulation, image data compression into image histograms, and a fully automated tone curve function parameters prediction.
+            The approach is generic and could be applied on solutions with a predefined analytic function.
+          </p>
+          <p class="bd-text" style="margin-bottom: 0px;">
+            The work in numbers:
+          </p>
+          <ul class="bd-text" style="text-align: left;">
+            <li>26-bit HDR sensor</li>
+            <li>150 dB dynamic range</li>
+            <li>1k neural network parameters</li>
+            <li>9 kFLOPS curve estimation</li>
+            <li>53 &#956;s runtime on Raspberry Pi 4</li>
+            <li>99.98 % fewer FLOPS than in <a href="https://www.mdpi.com/1424-8220/23/12/5767">DI-TM</a></li>
+            <li>5.85 dB higher PSNR than in DI-TM on real HDR camera images</li>
+          </ul>
+          <p class="ref-text">
+            2024 | <a href="https://arxiv.org/abs/2405.05016">arXiv</a>
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-tgtm" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-tgtm" aria-expanded="false" aria-controls="collapse-tgtm">Read more &darr;</button></p>
       </div>
     </div>
   </div>
