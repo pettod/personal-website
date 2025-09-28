@@ -726,6 +726,48 @@
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-remote" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-remote" aria-expanded="false" aria-controls="collapse-remote">Read more &darr;</button></p>
       </div>
     </div>
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-6 text-center">Smart mirror</h2>
+        <video class="img-border" width="100%" autoplay loop muted src="https://github-videos.s3.eu-west-2.amazonaws.com/smart_mirror_small.mp4" onclick="openModal(this.src, 'video')"></video>
+        <p class="img-text">
+          Embedded text of the weather, time, and news in a mirror.
+        </p>
+        <div class="collapse" id="collapse-smart-mirror">
+          <p class="bd-text">
+            Mornings are hectic ‒ you're rushing to get ready but still want to check the weather, local news, and the time without juggling multiple devices.
+            A Smart Mirror solves this by displaying all that information right on your mirror while you get prepared for the day.
+          </p>
+          <p class="bd-text" style="margin-bottom: 0px;">
+            Overview of the HW:
+          </p>
+          <ul class="bd-text" style="text-align: left;">
+            <li>Raspberry Pi</li>
+            <li>Monitor</li>
+            <li>Reflective window film</li>
+          </ul>
+          <p class="bd-text" style="margin-bottom: 0px;">
+            Overview of the SW:
+          </p>
+          <ul class="bd-text" style="text-align: left;">
+            <li>Weather from pirate-weather API</li>
+            <li>News from Kauppalehti</li>
+          </ul>
+          <img class="img-border" width="100%" src="https://s3.eu-west-2.amazonaws.com/github-videos/smart_mirror_front.JPG" onclick="openModal(this.src, 'image')">
+          <p class="img-text">
+            Front view of the smart mirror.
+          </p>
+          <img class="img-border" width="100%" src="https://s3.eu-west-2.amazonaws.com/github-videos/smart_mirror_back.JPG" onclick="openModal(this.src, 'image')">
+          <p class="img-text">
+            Back view of the smart mirror.
+          </p>
+          <p class="ref-text">
+            2019
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-smart-mirror" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-smart-mirror" aria-expanded="false" aria-controls="collapse-smart-mirror">Read more &darr;</button></p>
+      </div>
+    </div>
   </div>
 
   <!-- Modal for images and videos -->
