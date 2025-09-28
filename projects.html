@@ -47,9 +47,18 @@
         width: 100%; /* Full width */
         height: 100%; /* Full height */
         overflow: auto; /* Enable scroll if needed */
-        background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+        background-color: rgba(0, 0, 0, 0); /* Start transparent */
+        -webkit-backdrop-filter: blur(0px); /* Safari support */
+        backdrop-filter: blur(0px); /* Standard blur effect */
+        opacity: 0; /* Start invisible */
+        transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, -webkit-backdrop-filter 0.3s ease-in-out;
+      }
+
+      .modal.show {
+        background-color: rgba(0, 0, 0, 0.8); /* End with dark background */
         -webkit-backdrop-filter: blur(4px); /* Safari support */
         backdrop-filter: blur(4px); /* Standard blur effect */
+        opacity: 1; /* Fully visible */
       }
 
       .modal-content {
@@ -60,6 +69,14 @@
         width: auto; /* Maintain aspect ratio */
         height: auto; /* Maintain aspect ratio */
         margin: auto; /* Remove auto margin since we're using flexbox */
+        transform: scale(0.8); /* Start smaller */
+        opacity: 0; /* Start invisible */
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+      }
+
+      .modal-content.show {
+        transform: scale(1); /* Scale to full size */
+        opacity: 1; /* Fully visible */
       }
 
       .close {
@@ -805,22 +822,43 @@
     var img = document.getElementById("img01");
     var video = document.getElementById("video01");
     
+    // Set up the modal content
     if (type === 'image') {
       img.src = src;
       img.style.display = "block";
       video.style.display = "none";
+      // Remove show class initially
+      img.classList.remove("show");
     } else if (type === 'video') {
       video.src = src;
       video.style.display = "block";
       img.style.display = "none";
+      // Remove show class initially
+      video.classList.remove("show");
     }
     
-    modal.style.display = "block";
-    
-    // Center content vertically
+    // Show modal and set up flexbox centering
     modal.style.display = "flex";
     modal.style.alignItems = "center";
     modal.style.justifyContent = "center";
+    
+    // Remove show class from modal initially
+    modal.classList.remove("show");
+    
+    // Force a reflow to ensure the modal is rendered without the show class
+    modal.offsetHeight;
+    
+    // Add show class to trigger animations
+    modal.classList.add("show");
+    
+    // Add show class to content after a small delay for staggered animation
+    setTimeout(function() {
+      if (type === 'image') {
+        img.classList.add("show");
+      } else if (type === 'video') {
+        video.classList.add("show");
+      }
+    }, 100);
     
     // Add event listener to close modal when clicking outside
     window.onclick = function(event) {
@@ -839,11 +877,21 @@
 
   function closeModal() {
     var modal = document.getElementById("myModal");
-    modal.style.display = "none";
     var img = document.getElementById("img01");
     var video = document.getElementById("video01");
-    img.src = "";
-    video.src = "";
+    
+    // Remove show classes to trigger closing animation
+    modal.classList.remove("show");
+    img.classList.remove("show");
+    video.classList.remove("show");
+    
+    // Wait for animation to complete before hiding the modal
+    setTimeout(function() {
+      modal.style.display = "none";
+      img.src = "";
+      video.src = "";
+    }, 300); // Match the CSS transition duration
+    
     // Remove the window click event listener
     window.onclick = null;
   }
