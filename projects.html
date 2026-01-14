@@ -344,6 +344,31 @@
     </div>
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
+        <h2 class="display-6">Dictation app</h2>
+        <video class="img-border" width="100%" autoplay loop muted src="https://github-videos.s3.eu-west-2.amazonaws.com/whisperninja.mp4" onclick="openModal(this.src, 'video')"></video>
+        <p class="img-text">
+          Vibe type with your voice in any app.
+        </p>
+        <div class="collapse" id="collapse-otherly">
+          <p class="bd-text">
+            A locally run dictation app (100% private) supporting 100 languages.
+            Tuned to detect whispering if you have to be quiet.
+          </p>
+          <p class="ref-text">
+            2025 | <a href="https://whisperninja.app">Website</a>
+            <br>
+            2025 | <a href="https://github.com/pettod/whisperninja">Github</a>
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-otherly" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-otherly" aria-expanded="false" aria-controls="collapse-otherly">Read more &darr;</button></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- The second 3 projects -->
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
         <h2 class="display-6">AI companion</h2>
         <video class="img-border" width="100%" autoplay loop muted src="https://github.com/user-attachments/assets/807f06ba-5ba8-43bf-b995-f392e4a88d4c" onclick="openModal(this.src, 'video')"></video>
         <p class="img-text">
@@ -368,10 +393,6 @@
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-otherly" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-otherly" aria-expanded="false" aria-controls="collapse-otherly">Read more &darr;</button></p>
       </div>
     </div>
-  </div>
-
-  <!-- The second 3 projects -->
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Microscopy image analysis</h2>
@@ -401,43 +422,6 @@
           </p>
         </div>
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-ai-scientist" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-microscopy" aria-expanded="false" aria-controls="collapse-microscopy">Read more &darr;</button></p>
-      </div>
-    </div>
-    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-6">Acoustic occupancy sensor</h2>
-        <img class="img-border" width="100%" src="assets/rauha_flow_chart.png" onclick="openModal(this.src, 'image')">
-        <p class="img-text">
-          Architecture of our ultrasonic occupancy sensor.
-          The sensor is based on a microphone and filters out speech frequencies to preserve privacy.
-        </p>
-        <div class="collapse" id="collapse-rauha">
-          <p class="bd-text">
-            Occupancy sensor market has couple problems:
-            <ul class="bd-text" style="text-align: left;">
-              <li>Cheap sensors (PIR, CO2, Desk counter) are not accurate</li>
-              <li>Expensive sensors (Thermal, Depth, Lidar) are accurate but have field-of-view limitation and require installation and wirings</li>
-              <li>RGB, Wi-FI, Bluetooth are not privacy preserving not accurate</li>
-              <li>Battery life is a problem in many cheaper options</li>
-            </ul>
-          </p>
-          <p class="bd-text">
-            Our solution was to make plug-and-play ultrasonic sensor which is privacy preserving, have no battery life nor field-of-view problems, and is accurate.
-            Our sensor based on acoustic is privacy preserved because it filters out speech frequencies.
-            The device is easy to install because it can be plugged into any socket in the room as it has 360 degree field-of-view.
-            Finally, it is maintenance free because it is constantly powered by the wall socket.
-            <br>
-            <br>
-            The challenge in this project was to make the algorithm accurate because the people count, for example in a library, can be the same as in a kitchen while the acoustic signals are very different.
-          </p>
-          <p class="ref-text">
-            2024 | <a href="https://github.com/pettod/occupancy-estimation">Github 1</a><br>
-            2024 | <a href="https://github.com/pettod/microphone-occupancy">Github 2</a><br>
-            2024 | <a href="https://github.com/pettod/rauha-website">Github 3</a><br>
-            2024 | <a href="https://todorov.fi/products/rauha/dashboard">Dashboard</a>
-          </p>
-        </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-rauha" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-rauha" aria-expanded="false" aria-controls="collapse-deepfake">Read more &darr;</button></p>
       </div>
     </div>
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
@@ -562,6 +546,47 @@
     </div>
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
+        <h2 class="display-6">Acoustic occupancy sensor</h2>
+        <img class="img-border" width="100%" src="assets/rauha_flow_chart.png" onclick="openModal(this.src, 'image')">
+        <p class="img-text">
+          Architecture of our ultrasonic occupancy sensor.
+          The sensor is based on a microphone and filters out speech frequencies to preserve privacy.
+        </p>
+        <div class="collapse" id="collapse-rauha">
+          <p class="bd-text">
+            Occupancy sensor market has couple problems:
+            <ul class="bd-text" style="text-align: left;">
+              <li>Cheap sensors (PIR, CO2, Desk counter) are not accurate</li>
+              <li>Expensive sensors (Thermal, Depth, Lidar) are accurate but have field-of-view limitation and require installation and wirings</li>
+              <li>RGB, Wi-FI, Bluetooth are not privacy preserving not accurate</li>
+              <li>Battery life is a problem in many cheaper options</li>
+            </ul>
+          </p>
+          <p class="bd-text">
+            Our solution was to make plug-and-play ultrasonic sensor which is privacy preserving, have no battery life nor field-of-view problems, and is accurate.
+            Our sensor based on acoustic is privacy preserved because it filters out speech frequencies.
+            The device is easy to install because it can be plugged into any socket in the room as it has 360 degree field-of-view.
+            Finally, it is maintenance free because it is constantly powered by the wall socket.
+            <br>
+            <br>
+            The challenge in this project was to make the algorithm accurate because the people count, for example in a library, can be the same as in a kitchen while the acoustic signals are very different.
+          </p>
+          <p class="ref-text">
+            2024 | <a href="https://github.com/pettod/occupancy-estimation">Github 1</a><br>
+            2024 | <a href="https://github.com/pettod/microphone-occupancy">Github 2</a><br>
+            2024 | <a href="https://github.com/pettod/rauha-website">Github 3</a><br>
+            2024 | <a href="https://todorov.fi/products/rauha/dashboard">Dashboard</a>
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-rauha" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-rauha" aria-expanded="false" aria-controls="collapse-deepfake">Read more &darr;</button></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- The fourth 3 projects -->
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
         <h2 class="display-6">Prostate cancer grade assessment</h2>
         <img class="img-border" width="100%" src="https://github.com/pettod/personal-website/assets/33998401/ac116f86-61a6-4a3a-934e-5fd22da48c1a" onclick="openModal(this.src, 'image')">
         <p class="img-text">
@@ -589,10 +614,6 @@
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-cancer" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cancer" aria-expanded="false" aria-controls="collapse-cancer">Read more &darr;</button></p>
       </div>
     </div>
-  </div>
-
-  <!-- The fourth 3 projects -->
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6">Motion prediction for autonomous vehicles</h2>
@@ -643,29 +664,6 @@
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-inchi" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-inchi" aria-expanded="false" aria-controls="collapse-inchi">Read more &darr;</button></p>
       </div>
     </div>
-    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-6">Charuco corner detection</h2>
-        <img class="img-border" width="100%" src="https://github.com/pettod/charuco-corner-detection/raw/master/document_images/detected_charuco_markers.gif" onclick="openModal(this.src, 'image')">
-        <p class="img-text">
-          Real-time Charuco corner detection. All of the captured pictures (even without seeing or detecting every corner) can be used for camera calibration because every corner has an ID.
-        </p>
-        <div class="collapse" id="collapse-charuco">
-          <p class="bd-text">
-            Tool for camera calibration to detect checkerboard corners with corner identifications.
-            It is especially helpful for multi-camera calibration where all the cameras cannot see the whole checkerboard.
-            By knowing the corner identifications, one can use images with partly visible checkerboards for camera calibration.
-          </p>
-          <p class="bd-text">
-            Used Python OpenCV and embedded it into Matlab as well.
-          </p>
-          <p class="ref-text">
-            2019 | <a href="https://github.com/pettod/charuco-corner-detection">Github</a>
-          </p>
-        </div>
-        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-charuco" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-charuco" aria-expanded="false" aria-controls="collapse-charuco">Read more &darr;</button></p>
-      </div>
-    </div>
   </div>
 
   <!-- The fifth 3 projects -->
@@ -709,6 +707,33 @@
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-gpu" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-gpu" aria-expanded="false" aria-controls="collapse-gpu">Read more &darr;</button></p>
       </div>
     </div>
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-6">Charuco corner detection</h2>
+        <img class="img-border" width="100%" src="https://github.com/pettod/charuco-corner-detection/raw/master/document_images/detected_charuco_markers.gif" onclick="openModal(this.src, 'image')">
+        <p class="img-text">
+          Real-time Charuco corner detection. All of the captured pictures (even without seeing or detecting every corner) can be used for camera calibration because every corner has an ID.
+        </p>
+        <div class="collapse" id="collapse-charuco">
+          <p class="bd-text">
+            Tool for camera calibration to detect checkerboard corners with corner identifications.
+            It is especially helpful for multi-camera calibration where all the cameras cannot see the whole checkerboard.
+            By knowing the corner identifications, one can use images with partly visible checkerboards for camera calibration.
+          </p>
+          <p class="bd-text">
+            Used Python OpenCV and embedded it into Matlab as well.
+          </p>
+          <p class="ref-text">
+            2019 | <a href="https://github.com/pettod/charuco-corner-detection">Github</a>
+          </p>
+        </div>
+        <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-charuco" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-charuco" aria-expanded="false" aria-controls="collapse-charuco">Read more &darr;</button></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- The fifth 3 projects -->
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-6 text-center">Remote device control</h2>
@@ -785,6 +810,8 @@
         <p class="text-center gap-1"><button onclick="readButtonChange(this.id)" id="readMore-smart-mirror" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-smart-mirror" aria-expanded="false" aria-controls="collapse-smart-mirror">Read more &darr;</button></p>
       </div>
     </div>
+  </div>
+
   </div>
 
   <!-- Modal for images and videos -->
